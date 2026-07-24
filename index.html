@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluuth — Blunt. Honest. Done.</title>
+<style>
+  :root{
+    --green-deep:#0b3d2e;
+    --green:#1a6d4c;
+    --green-bright:#2f9e6f;
+    --green-mint:#e8f5ee;
+    --ink:#101512;
+    --paper:#fbfdfb;
+    --grey:#5c6b64;
+    --line:#dbe8e0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;background:rgba(251,253,251,0.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50;
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:16px;}
+  .logo{font-size:22px;font-weight:800;letter-spacing:-0.5px;color:var(--green-deep);}
+  .logo span{color:var(--green-bright);}
+  .navlinks{display:flex;gap:32px;font-size:15px;font-weight:600;}
+  .navlinks a:hover{color:var(--green);}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .lang-select{
+    appearance:none;-webkit-appearance:none;
+    background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"><path d="M0 0l5 6 5-6z" fill="%230b3d2e"/></svg>') no-repeat right 10px center;
+    border:1.5px solid var(--line);color:var(--green-deep);
+    font-weight:700;font-size:13px;padding:8px 30px 8px 12px;border-radius:8px;cursor:pointer;
+  }
+  .lang-select:hover{border-color:var(--green-bright);}
+  .currency-select{
+    appearance:none;-webkit-appearance:none;
+    background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"><path d="M0 0l5 6 5-6z" fill="%230b3d2e"/></svg>') no-repeat right 10px center;
+    border:1.5px solid var(--line);color:var(--green-deep);
+    font-weight:700;font-size:13px;padding:8px 30px 8px 12px;border-radius:8px;cursor:pointer;
+  }
+  .currency-select:hover{border-color:var(--green-bright);}
+  .nav-cta{
+    background:var(--green-deep);color:#fff;padding:10px 20px;border-radius:8px;
+    font-weight:700;font-size:14px;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--green);}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(180deg,var(--green-mint) 0%, var(--paper) 100%);
+    padding:90px 0 70px;text-align:center;border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    display:inline-block;background:var(--green-deep);color:#fff;font-size:12px;
+    font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;
+    border-radius:100px;margin-bottom:24px;
+  }
+  h1{
+    font-size:56px;font-weight:800;letter-spacing:-1.5px;color:var(--green-deep);
+    max-width:780px;margin:0 auto 20px;
+  }
+  h1 em{font-style:normal;color:var(--green-bright);}
+  .hero p.sub{
+    font-size:19px;color:var(--grey);max-width:600px;margin:0 auto 34px;
+  }
+  .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--green-deep);color:#fff;padding:15px 30px;border-radius:9px;
+    font-weight:700;font-size:16px;box-shadow:0 8px 20px rgba(11,61,46,0.25);
+  }
+  .btn-primary:hover{background:var(--green);}
+  .btn-secondary{
+    background:#fff;color:var(--green-deep);padding:15px 30px;border-radius:9px;
+    font-weight:700;font-size:16px;border:2px solid var(--green-deep);
+  }
+  .btn-secondary:hover{background:var(--green-mint);}
+
+  /* PROMISE STRIP */
+  .promise-strip{background:var(--paper);padding:60px 0 10px;}
+  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .promise-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;
+    text-align:center;
+  }
+  .promise-card .picon{
+    width:46px;height:46px;border-radius:12px;background:var(--green-deep);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;
+    margin:0 auto 14px;
+  }
+  .promise-card h4{font-size:16px;font-weight:800;color:var(--green-deep);margin-bottom:6px;}
+  .promise-card p{font-size:14px;color:var(--grey);}
+
+  /* QUOTE */
+  .quote-section{padding:70px 0;text-align:center;background:var(--green-deep);color:#fff;}
+  .quote-section blockquote{
+    font-size:28px;font-weight:600;max-width:720px;margin:0 auto 18px;
+    letter-spacing:-0.3px;line-height:1.45;
+  }
+  .quote-section blockquote::before{content:"“";}
+  .quote-section blockquote::after{content:"”";}
+  .quote-attr{color:var(--green-bright);font-weight:700;font-size:14px;letter-spacing:0.5px;text-transform:uppercase;}
+
+  /* SECTION HEADERS */
+  section{padding:80px 0;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 50px;}
+  .section-head .tag{color:var(--green);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;}
+  .section-head h2{font-size:38px;font-weight:800;letter-spacing:-1px;color:var(--green-deep);margin:10px 0 14px;}
+  .section-head p{color:var(--grey);font-size:17px;}
+
+  /* WHO WE ARE */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .about-grid h2{font-size:34px;font-weight:800;color:var(--green-deep);letter-spacing:-1px;margin-bottom:18px;}
+  .about-grid p{color:var(--grey);font-size:16px;margin-bottom:16px;}
+  .about-card{
+    background:var(--green-mint);border:1px solid var(--line);border-radius:16px;padding:32px;
+  }
+  .about-card ul{list-style:none;}
+  .about-card li{
+    display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;font-weight:600;
+  }
+  .about-card li:last-child{border-bottom:none;}
+  .about-card li::before{content:"✓";color:var(--green-bright);font-weight:900;}
+
+  /* CLIENT WORK */
+  .work-subhead{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--green);margin-bottom:16px;}
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:18px;}
+  .work-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;
+  }
+  .work-card img{max-width:100%;max-height:56px;object-fit:contain;}
+  .work-card .wname{font-size:13px;font-weight:700;color:var(--ink);}
+  .work-card .wservice{font-size:12px;color:var(--grey);}
+
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .service-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;
+    transition:transform .15s, box-shadow .15s;
+  }
+  .service-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(11,61,46,0.08);border-color:var(--green-bright);}
+  .service-card .icon{
+    width:40px;height:40px;border-radius:10px;background:var(--green-mint);color:var(--green-deep);
+    display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px;
+  }
+  .service-card h3{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--ink);}
+  .service-card p{font-size:14px;color:var(--grey);}
+
+  /* PRICING */
+  .pricing-section{background:var(--green-mint);}
+  .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px;}
+  .price-card{
+    background:#fff;border-radius:20px;padding:40px;border:1px solid var(--line);position:relative;
+  }
+  .price-card.featured{
+    background:var(--green-deep);color:#fff;border:none;box-shadow:0 20px 40px rgba(11,61,46,0.25);
+  }
+  .price-badge{
+    position:absolute;top:-14px;right:32px;background:var(--green-bright);color:#fff;font-size:12px;
+    font-weight:800;letter-spacing:0.5px;text-transform:uppercase;padding:6px 14px;border-radius:100px;
+  }
+  .price-card h3{font-size:20px;font-weight:800;margin-bottom:8px;}
+  .price-card .price-amt{font-size:44px;font-weight:800;letter-spacing:-1px;margin:14px 0 6px;}
+  .price-card .price-amt span{font-size:16px;font-weight:600;opacity:0.7;}
+  .price-card .price-desc{font-size:14px;opacity:0.75;margin-bottom:24px;}
+  .price-card ul{list-style:none;margin-bottom:28px;}
+  .price-card li{
+    display:flex;gap:10px;padding:9px 0;font-size:14.5px;font-weight:500;
+    border-bottom:1px solid rgba(0,0,0,0.06);
+  }
+  .price-card.featured li{border-bottom:1px solid rgba(255,255,255,0.15);}
+  .price-card li::before{content:"✓";font-weight:900;color:var(--green-bright);}
+  .price-card.featured li::before{color:#8ce0b4;}
+  .price-cta{
+    display:block;text-align:center;padding:14px;border-radius:9px;font-weight:700;font-size:15px;
+    background:var(--green-deep);color:#fff;
+  }
+  .price-card.featured .price-cta{background:#fff;color:var(--green-deep);}
+  .price-cta:hover{opacity:0.9;}
+
+  .maintenance-card{
+    background:#fff;border:2px dashed var(--green-bright);border-radius:16px;
+    padding:26px 30px;display:flex;align-items:center;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;
+  }
+  .maintenance-card .m-left h4{font-size:17px;font-weight:800;color:var(--green-deep);margin-bottom:4px;}
+  .maintenance-card .m-left p{font-size:14px;color:var(--grey);max-width:480px;}
+  .maintenance-card .m-right{display:flex;align-items:baseline;gap:6px;white-space:nowrap;}
+  .maintenance-card .m-right .amt{font-size:30px;font-weight:800;color:var(--green-deep);}
+  .maintenance-card .m-right .per{font-size:13px;color:var(--grey);font-weight:600;}
+
+  /* PAYMENT BADGES */
+  .pay-badges{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+  .pay-badge{
+    font-size:12px;font-weight:800;padding:6px 12px;border-radius:100px;letter-spacing:0.2px;
+  }
+  .pay-badge.paypal{background:#e8f0fb;color:#003087;}
+  .pay-badge.klarna{background:#ffb3c7;color:#17120f;}
+  .price-card.featured .pay-badge.paypal{background:#cfe0f7;}
+
+  /* PAYMENT & FEES SECTION */
+  .pay-section{background:var(--paper);}
+  .pay-methods{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px;}
+  .pay-method{
+    display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
+    border-radius:100px;padding:10px 20px;font-weight:700;font-size:14px;
+  }
+  .pay-method .dot{width:10px;height:10px;border-radius:50%;}
+  .pay-method.pm-paypal .dot{background:#003087;}
+  .pay-method.pm-klarna .dot{background:#ffb3c7;}
+  .fee-table{
+    width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .fee-table th, .fee-table td{padding:16px 18px;text-align:left;font-size:14.5px;}
+  .fee-table thead th{
+    background:var(--green-deep);color:#fff;font-weight:800;font-size:12.5px;
+    text-transform:uppercase;letter-spacing:0.5px;
+  }
+  .fee-table tbody tr:nth-child(even){background:var(--green-mint);}
+  .fee-table tbody td:first-child{font-weight:700;color:var(--green-deep);}
+  .fee-note{text-align:center;color:var(--grey);font-size:13.5px;max-width:600px;margin:20px auto 0;}
+
+  /* DISCOVERY CTA */
+  .cta-band{
+    background:var(--green-deep);color:#fff;text-align:center;padding:70px 0;border-radius:0;
+  }
+  .cta-band h2{font-size:34px;font-weight:800;letter-spacing:-1px;margin-bottom:14px;}
+  .cta-band p{color:#cfe9db;font-size:17px;margin-bottom:30px;}
+
+  footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:var(--grey);font-size:13px;}
+  footer .flogo{font-weight:800;color:var(--green-deep);margin-bottom:8px;font-size:16px;}
+
+  @media(max-width:820px){
+    h1{font-size:38px;}
+    .about-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .pricing-grid{grid-template-columns:1fr;}
+    .promise-grid{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    /* Without this the lang/currency selects and the CTA button were
+       squeezed into one unbreakable row next to the logo, so on phones
+       they overlapped/clipped and taps often missed the control —
+       which is why switching language or currency looked "broken" on
+       mobile even though the underlying JS worked fine. */
+    nav{flex-wrap:wrap;row-gap:12px;}
+    .nav-right{width:100%;justify-content:center;flex-wrap:wrap;gap:10px;}
+  }
+  @media(max-width:520px){
+    .services-grid{grid-template-columns:1fr;}
+    .maintenance-card{flex-direction:column;align-items:flex-start;}
+    .lang-select, .currency-select{
+      flex:1 1 auto;min-width:0;font-size:13px;padding:10px 26px 10px 10px;
+    }
+    .nav-cta{flex:1 1 100%;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">bl<span>uu</span>th</div>
+      <div class="navlinks">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      </div>
+      <div class="nav-right">
+        <select class="lang-select" id="langSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="nl">Nederlands</option>
+          <option value="sv">Svenska</option>
+          <option value="de">Deutsch</option>
+        </select>
+        <select class="currency-select" id="currencySelect" aria-label="Currency">
+          <option value="EUR">EUR €</option>
+          <option value="USD">USD $</option>
+          <option value="GBP">GBP £</option>
+          <option value="SEK">SEK kr</option>
+        </select>
+        <a href="#discovery" class="nav-cta" data-i18n="nav.cta">Book free call</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="hero.eyebrow">Operations · IT · Consulting</div>
+    <h1 data-i18n-html="hero.title">Blunt advice. <em>Honest</em> work. Real results.</h1>
+    <p class="sub" data-i18n="hero.sub">Bluuth builds the business plans, websites, tools and reporting systems that actually run your business — no jargon, no upsells, no fluff. Just a straight answer and a job done right.</p>
+    <div class="hero-btns">
+      <a href="#discovery" class="btn-primary" data-i18n="hero.btn1">Book your free discovery call</a>
+      <a href="#pricing" class="btn-secondary" data-i18n="hero.btn2">See pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="promise-strip">
+  <div class="wrap">
+    <div class="promise-grid">
+      <div class="promise-card">
+        <div class="picon">100%</div>
+        <h4 data-i18n="strip.title1">Yours to keep</h4>
+        <p data-i18n="strip.desc1">Everything we build is and stays your property — we just maintain it if you want us to.</p>
+      </div>
+      <div class="promise-card">
+        <div class="picon">⌂</div>
+        <h4 data-i18n="strip.title2">One roof</h4>
+        <p data-i18n="strip.desc2">From business plan to website to reporting — all your business needs in a single place.</p>
+      </div>
+      <div class="promise-card">
+        <div class="picon">→</div>
+        <h4 data-i18n="strip.title3">Direct contact</h4>
+        <p data-i18n="strip.desc3">You always talk to Kevin. No account managers, no middlemen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="wrap">
+    <blockquote data-i18n="quote.text">Most consultants sell you a plan. I build you the thing.</blockquote>
+    <div class="quote-attr" data-i18n="quote.attr">— Kevin Doesburg, Founder of Bluuth</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-head" style="text-align:left;margin:0;">
+        <div class="tag" data-i18n="about.tag">Why Bluuth</div>
+        <h2 data-i18n="about.h2">An operator, not a slide deck.</h2>
+      </div>
+      <p data-i18n="about.p1">Bluuth isn't an agency full of theory. It's built on years running day-to-day operations across multiple locations — the kind of experience where "the plan" has to survive contact with a real Tuesday shift.</p>
+      <p data-i18n="about.p2">We're not here to sell you on AI. We use smart tools quietly, in the background, to move faster — but the relationship is always human to human. You talk to the person doing the work.</p>
+    </div>
+    <div class="about-card">
+      <ul>
+        <li data-i18n="about.li1">Hands-on operator experience across 10+ locations</li>
+        <li data-i18n="about.li2">Certified across Anthropic &amp; Microsoft Azure platforms</li>
+        <li data-i18n="about.li3">Built scheduling &amp; reporting tools already live with clients</li>
+        <li data-i18n="about.li4">Everything we build is your property — we only handle the maintenance</li>
+        <li data-i18n="about.li5">Free 1-hour discovery call before you commit to anything</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="display:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag" data-i18n="work.tag">Client work</div>
+      <h2 data-i18n="work.h2">Businesses we're building for.</h2>
+    </div>
+    <div id="workCurrentBlock" style="display:none;margin-bottom:40px;">
+      <h3 class="work-subhead" data-i18n="work.current">In progress</h3>
+      <div class="work-grid" id="workCurrentGrid"></div>
+    </div>
+    <div id="workFinishedBlock" style="display:none;">
+      <h3 class="work-subhead" data-i18n="work.finished">Delivered</h3>
+      <div class="work-grid" id="workFinishedGrid"></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag" data-i18n="services.tag">What we build</div>
+      <h2 data-i18n="services.h2">One job. One flat price.</h2>
+      <p data-i18n="services.p">Pick exactly what your business needs — every deliverable below is €375, on its own, no bundling required.</p>
+      <p style="margin-top:10px;font-weight:600;color:var(--green-deep);">
+        <span data-i18n="services.notlisted">Don't see what you need? Chances are I can still build it —</span>
+        <a href="#discovery" style="text-decoration:underline;" data-i18n="services.notlisted.cta">get in touch and let's talk.</a>
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="icon">01</div><h3 data-i18n="service1.title">Business Plan</h3><p data-i18n="service1.desc">A plan built to actually be used, not filed away.</p></div>
+      <div class="service-card"><div class="icon">02</div><h3 data-i18n="service2.title">Website Build</h3><p data-i18n="service2.desc">Fast, clean, mobile-ready — built and launched for you.</p></div>
+      <div class="service-card"><div class="icon">03</div><h3 data-i18n="service3.title">App / Tool Build</h3><p data-i18n="service3.desc">Custom internal tools that fix a specific problem.</p></div>
+      <div class="service-card"><div class="icon">04</div><h3 data-i18n="service4.title">P&amp;L Reporting Setup</h3><p data-i18n="service4.desc">Know your numbers without chasing a spreadsheet.</p></div>
+      <div class="service-card"><div class="icon">05</div><h3 data-i18n="service5.title">Scheduling Tool</h3><p data-i18n="service5.desc">Staff scheduling that matches how your team actually works.</p></div>
+      <div class="service-card"><div class="icon">06</div><h3 data-i18n="service6.title">Cash Flow Forecasting</h3><p data-i18n="service6.desc">See what's coming before it becomes a problem.</p></div>
+      <div class="service-card"><div class="icon">07</div><h3 data-i18n="service7.title">Operations Audit</h3><p data-i18n="service7.desc">An honest look at what's slowing you down.</p></div>
+      <div class="service-card"><div class="icon">08</div><h3 data-i18n="service8.title">Staff Cost Analysis</h3><p data-i18n="service8.desc">Understand exactly where labor spend is going.</p></div>
+      <div class="service-card"><div class="icon">09</div><h3 data-i18n="service9.title">Marketing Automation</h3><p data-i18n="service9.desc">Set-and-forget systems that keep leads moving.</p></div>
+      <div class="service-card"><div class="icon">10</div><h3 data-i18n="service10.title">Social Media Setup</h3><p data-i18n="service10.desc">Profiles, structure and a posting system that sticks.</p></div>
+      <div class="service-card"><div class="icon">11</div><h3 data-i18n="service11.title">Storefront Integration</h3><p data-i18n="service11.desc">Sell online with payments that just work.</p></div>
+      <div class="service-card"><div class="icon">12</div><h3 data-i18n="service12.title">AI Scheduling Tools</h3><p data-i18n="service12.desc">Quiet automation that saves hours every week.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag" data-i18n="pricing.tag">Pricing</div>
+      <h2 data-i18n="pricing.h2">No hidden fees. No surprises.</h2>
+      <p data-i18n="pricing.p">Choose a single deliverable, or go all-in with the 3-month package. Add ongoing maintenance only if you want it.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3 data-i18n="price1.title">Single Service</h3>
+        <div class="price-amt" data-eur="375">€375</div>
+        <div class="price-desc" data-i18n="price1.desc">One deliverable, done properly, start to finish.</div>
+        <ul>
+          <li data-i18n="price1.li1">Any one service from the list above</li>
+          <li data-i18n="price1.li2">Fixed price, agreed up front</li>
+          <li data-i18n="price1.li3">Direct communication with Kevin</li>
+          <li data-i18n="price1.li4">Delivered on a clear timeline</li>
+        </ul>
+        <a href="#discovery" class="price-cta" data-i18n="price1.cta">Start a project</a>
+        <div class="pay-badges">
+          <span class="pay-badge paypal">PayPal</span>
+          <span class="pay-badge klarna">Klarna</span>
+        </div>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-badge" data-i18n="price2.badge">Most popular</div>
+        <h3 data-i18n="price2.title">3-Month Package</h3>
+        <div class="price-amt" data-eur="1500">€1500</div>
+        <div class="price-desc" data-i18n="price2.desc">Full business support across three months.</div>
+        <ul>
+          <li data-i18n="price2.li1">Multiple services, as needed</li>
+          <li data-i18n="price2.li2">Monthly P&amp;L reporting</li>
+          <li data-i18n="price2.li3">Ongoing business support &amp; advice</li>
+          <li data-i18n="price2.li4">Direct access to Kevin, whenever needed</li>
+        </ul>
+        <a href="#discovery" class="price-cta" data-i18n="price2.cta">Book discovery call</a>
+        <div class="pay-badges">
+          <span class="pay-badge paypal">PayPal</span>
+          <span class="pay-badge klarna">Klarna</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="maintenance-card">
+      <div class="m-left">
+        <h4 data-i18n="maintenance.h4">Want it kept running? Add monthly maintenance.</h4>
+        <p data-i18n="maintenance.p">Optional add-on for any project — updates, fixes, and small changes handled for you every month, no separate invoice each time.</p>
+      </div>
+      <div class="m-right">
+        <span class="amt" data-eur="50">€50</span>
+        <span class="per" data-i18n-html="maintenance.per">/ month<br>optional</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pay-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag" data-i18n="pay.tag">How you pay</div>
+      <h2 data-i18n="pay.h2">Pay however works for you.</h2>
+      <p data-i18n="pay.p">PayPal or Klarna — pick whichever you trust. No card surcharges, ever.</p>
+    </div>
+    <div class="pay-methods">
+      <div class="pay-method pm-paypal"><span class="dot"></span>PayPal</div>
+      <div class="pay-method pm-klarna"><span class="dot"></span>Klarna</div>
+    </div>
+
+    <div class="section-head">
+      <div class="tag" data-i18n="fees.tag">Full transparency</div>
+      <h2 data-i18n="fees.h2">What processing actually costs.</h2>
+      <p data-i18n="fees.p">We don't mark anything up. Here's exactly what Klarna and PayPal charge us on each plan — the price you see is the price that matters.</p>
+    </div>
+    <table class="fee-table">
+      <thead>
+        <tr>
+          <th data-i18n="fees.col.plan">Plan</th>
+          <th data-i18n="fees.col.klarna">Klarna fee (we pay)</th>
+          <th data-i18n="fees.col.paypal">PayPal fee (we pay)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-i18n="fees.row1">Single Service</td>
+          <td data-eur-fee="4.70">€4.70</td>
+          <td data-eur-fee="13.50">€13.50</td>
+        </tr>
+        <tr>
+          <td data-i18n="fees.row2">3-Month Package</td>
+          <td data-eur-fee="15.85">€15.85</td>
+          <td data-eur-fee="52.50">€52.50</td>
+        </tr>
+        <tr>
+          <td data-i18n="fees.row3">Monthly Maintenance</td>
+          <td data-eur-fee="0.65">€0.65</td>
+          <td data-eur-fee="2.05">€2.05</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="fee-note" data-i18n="fees.note">Figures are approximate processor rates as of 2026 and can shift slightly with currency and card type — but they're never padded on your invoice.</p>
+  </div>
+</section>
+
+<section id="discovery" class="cta-band">
+  <div class="wrap">
+    <h2 data-i18n="cta.h2">Start with a straight conversation.</h2>
+    <p data-i18n="cta.p">Free 1-hour discovery call. No pitch deck, no pressure — just an honest look at what your business actually needs.</p>
+    <!-- TEMPORARY: this points at Kevin's ngrok tunnel for testing. Only works while
+         his local server + ngrok are both running. Swap for the real deployed domain
+         once bluuth-portal is hosted somewhere permanent (see PORTAL_BASE_URL below,
+         which drives this same link via JS - only needs updating in one place). -->
+    <a href="https://subsonic-anvil-brunt.ngrok-free.dev/book.html" id="bookCallBtn" target="_blank" rel="noopener" class="btn-primary" style="background:#fff;color:var(--green-deep);" data-i18n="cta.btn">Book your free call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flogo">bluuth</div>
+    <div data-i18n="footer.text">Blunt + Truth. Operations, IT &amp; Consulting for businesses that want results, not reports.</div>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  en: {
+    "nav.about":"About","nav.services":"Services","nav.pricing":"Pricing","nav.cta":"Book free call",
+    "hero.eyebrow":"Operations · IT · Consulting",
+    "hero.title":"Blunt advice. <em>Honest</em> work. Real results.",
+    "hero.sub":"Bluuth builds the business plans, websites, tools and reporting systems that actually run your business — no jargon, no upsells, no fluff. Just a straight answer and a job done right.",
+    "hero.btn1":"Book your free discovery call","hero.btn2":"See pricing",
+    "strip.title1":"Yours to keep","strip.desc1":"Everything we build is and stays your property — we just maintain it if you want us to.",
+    "strip.title2":"One roof","strip.desc2":"From business plan to website to reporting — all your business needs in a single place.",
+    "strip.title3":"Direct contact","strip.desc3":"You always talk to Kevin. No account managers, no middlemen.",
+    "quote.text":"Most consultants sell you a plan. I build you the thing.",
+    "quote.attr":"— Kevin Doesburg, Founder of Bluuth",
+    "about.tag":"Why Bluuth","about.h2":"An operator, not a slide deck.",
+    "about.p1":"Bluuth isn't an agency full of theory. It's built on years running day-to-day operations across multiple locations — the kind of experience where \"the plan\" has to survive contact with a real Tuesday shift.",
+    "about.p2":"We're not here to sell you on AI. We use smart tools quietly, in the background, to move faster — but the relationship is always human to human. You talk to the person doing the work.",
+    "about.li1":"Hands-on operator experience across 10+ locations",
+    "about.li2":"Certified across Anthropic & Microsoft Azure platforms",
+    "about.li3":"Built scheduling & reporting tools already live with clients",
+    "about.li4":"Everything we build is your property — we only handle the maintenance",
+    "about.li5":"Free 1-hour discovery call before you commit to anything",
+    "work.tag":"Client work","work.h2":"Businesses we're building for.","work.current":"In progress","work.finished":"Delivered",
+    "services.tag":"What we build","services.h2":"One job. One flat price.",
+    "services.p":"Pick exactly what your business needs — every deliverable below is €375, on its own, no bundling required.",
+    "services.notlisted":"Don't see what you need? Chances are I can still build it —",
+    "services.notlisted.cta":"get in touch and let's talk.",
+    "service1.title":"Business Plan","service1.desc":"A plan built to actually be used, not filed away.",
+    "service2.title":"Website Build","service2.desc":"Fast, clean, mobile-ready — built and launched for you.",
+    "service3.title":"App / Tool Build","service3.desc":"Custom internal tools that fix a specific problem.",
+    "service4.title":"P&L Reporting Setup","service4.desc":"Know your numbers without chasing a spreadsheet.",
+    "service5.title":"Scheduling Tool","service5.desc":"Staff scheduling that matches how your team actually works.",
+    "service6.title":"Cash Flow Forecasting","service6.desc":"See what's coming before it becomes a problem.",
+    "service7.title":"Operations Audit","service7.desc":"An honest look at what's slowing you down.",
+    "service8.title":"Staff Cost Analysis","service8.desc":"Understand exactly where labor spend is going.",
+    "service9.title":"Marketing Automation","service9.desc":"Set-and-forget systems that keep leads moving.",
+    "service10.title":"Social Media Setup","service10.desc":"Profiles, structure and a posting system that sticks.",
+    "service11.title":"Storefront Integration","service11.desc":"Sell online with payments that just work.",
+    "service12.title":"AI Scheduling Tools","service12.desc":"Quiet automation that saves hours every week.",
+    "pricing.tag":"Pricing","pricing.h2":"No hidden fees. No surprises.",
+    "pricing.p":"Choose a single deliverable, or go all-in with the 3-month package. Add ongoing maintenance only if you want it.",
+    "price1.title":"Single Service","price1.desc":"One deliverable, done properly, start to finish.",
+    "price1.li1":"Any one service from the list above","price1.li2":"Fixed price, agreed up front",
+    "price1.li3":"Direct communication with Kevin","price1.li4":"Delivered on a clear timeline","price1.cta":"Start a project",
+    "price2.badge":"Most popular","price2.title":"3-Month Package","price2.desc":"Full business support across three months.",
+    "price2.li1":"Multiple services, as needed","price2.li2":"Monthly P&L reporting",
+    "price2.li3":"Ongoing business support & advice","price2.li4":"Direct access to Kevin, whenever needed",
+    "price2.cta":"Book discovery call",
+    "maintenance.h4":"Want it kept running? Add monthly maintenance.",
+    "maintenance.p":"Optional add-on for any project — updates, fixes, and small changes handled for you every month, no separate invoice each time.",
+    "maintenance.per":"/ month<br>optional",
+    "cta.h2":"Start with a straight conversation.",
+    "cta.p":"Free 1-hour discovery call. No pitch deck, no pressure — just an honest look at what your business actually needs.",
+    "cta.btn":"Book your free call",
+    "footer.text":"Blunt + Truth. Operations, IT & Consulting for businesses that want results, not reports.",
+    "pay.tag":"How you pay","pay.h2":"Pay however works for you.",
+    "pay.p":"PayPal or Klarna — pick whichever you trust. No card surcharges, ever.",
+    "fees.tag":"Full transparency","fees.h2":"What processing actually costs.",
+    "fees.p":"We don't mark anything up. Here's exactly what Klarna and PayPal charge us on each plan — the price you see is the price that matters.",
+    "fees.col.plan":"Plan","fees.col.klarna":"Klarna fee (we pay)","fees.col.paypal":"PayPal fee (we pay)",
+    "fees.row1":"Single Service","fees.row2":"3-Month Package","fees.row3":"Monthly Maintenance",
+    "fees.note":"Figures are approximate processor rates as of 2026 and can shift slightly with currency and card type — but they're never padded on your invoice."
+  },
+  nl: {
+    "nav.about":"Over ons","nav.services":"Diensten","nav.pricing":"Prijzen","nav.cta":"Gratis gesprek boeken",
+    "hero.eyebrow":"Operaties · IT · Consulting",
+    "hero.title":"Botte adviezen. <em>Eerlijk</em> werk. Echte resultaten.",
+    "hero.sub":"Bluuth bouwt de businessplannen, websites, tools en rapportagesystemen die je bedrijf écht laten draaien — geen jargon, geen upsells, geen onzin. Gewoon een eerlijk antwoord en een klus die goed wordt gedaan.",
+    "hero.btn1":"Boek je gratis kennismakingsgesprek","hero.btn2":"Bekijk prijzen",
+    "strip.title1":"100% van jou","strip.desc1":"Alles wat we bouwen is en blijft jouw eigendom — wij onderhouden het alleen als je dat wilt.",
+    "strip.title2":"Alles onder één dak","strip.desc2":"Van businessplan tot website tot rapportage — al je bedrijfsbehoeften op één plek.",
+    "strip.title3":"Direct contact","strip.desc3":"Je spreekt altijd met Kevin. Geen accountmanagers, geen tussenpersonen.",
+    "quote.text":"De meeste consultants verkopen je een plan. Ik bouw het ding zelf.",
+    "quote.attr":"— Kevin Doesburg, Oprichter van Bluuth",
+    "about.tag":"Waarom Bluuth","about.h2":"Een operator, geen PowerPoint.",
+    "about.p1":"Bluuth is geen bureau vol theorie. Het is gebouwd op jarenlange ervaring in de dagelijkse operatie van meerdere vestigingen — waar \"het plan\" een echte dinsdagdienst moet overleven.",
+    "about.p2":"We verkopen je geen AI-verhaal. We gebruiken slimme tools op de achtergrond om sneller te werken — maar het contact blijft altijd mens tot mens. Je spreekt met degene die het werk doet.",
+    "about.li1":"Praktijkervaring als operator in 10+ vestigingen",
+    "about.li2":"Gecertificeerd bij Anthropic & Microsoft Azure",
+    "about.li3":"Bouwde al planning- en rapportagetools die live draaien bij klanten",
+    "about.li4":"Alles wat we bouwen is jouw eigendom — wij onderhouden het alleen",
+    "about.li5":"Gratis kennismakingsgesprek van 1 uur, geheel vrijblijvend",
+    "work.tag":"Klantwerk","work.h2":"Bedrijven waar we voor bouwen.","work.current":"In uitvoering","work.finished":"Opgeleverd",
+    "services.tag":"Wat we bouwen","services.h2":"Eén klus. Eén vaste prijs.",
+    "services.p":"Kies precies wat je bedrijf nodig heeft — elk onderdeel hieronder is €375, los te bestellen, geen bundel verplicht.",
+    "services.notlisted":"Staat jouw wens er niet bij? Kans is groot dat ik het toch kan bouwen —",
+    "services.notlisted.cta":"neem contact op, dan bespreken we het.",
+    "service1.title":"Businessplan","service1.desc":"Een plan dat echt gebruikt wordt, niet in een la verdwijnt.",
+    "service2.title":"Website bouwen","service2.desc":"Snel, overzichtelijk, mobielvriendelijk — gebouwd en gelanceerd voor jou.",
+    "service3.title":"App / tool bouwen","service3.desc":"Maatwerk interne tools die één specifiek probleem oplossen.",
+    "service4.title":"P&L rapportage opzetten","service4.desc":"Ken je cijfers zonder achter een spreadsheet aan te jagen.",
+    "service5.title":"Planningstool","service5.desc":"Personeelsplanning die past bij hoe je team echt werkt.",
+    "service6.title":"Cashflow prognose","service6.desc":"Zie wat eraan komt voordat het een probleem wordt.",
+    "service7.title":"Operationele audit","service7.desc":"Een eerlijke blik op wat je vertraagt.",
+    "service8.title":"Personeelskostenanalyse","service8.desc":"Begrijp precies waar je loonkosten naartoe gaan.",
+    "service9.title":"Marketingautomatisering","service9.desc":"Systemen die leads laten doorstromen, zonder omkijken.",
+    "service10.title":"Social media opzet","service10.desc":"Profielen, structuur en een postschema dat blijft werken.",
+    "service11.title":"Webshop integratie","service11.desc":"Online verkopen met betalingen die gewoon werken.",
+    "service12.title":"AI-planningstools","service12.desc":"Stille automatisering die elke week uren bespaart.",
+    "pricing.tag":"Prijzen","pricing.h2":"Geen verborgen kosten. Geen verrassingen.",
+    "pricing.p":"Kies één losse dienst, of ga all-in met het 3-maandenpakket. Voeg alleen onderhoud toe als je dat wilt.",
+    "price1.title":"Losse dienst","price1.desc":"Eén klus, goed gedaan, van begin tot eind.",
+    "price1.li1":"Elke dienst uit de lijst hierboven","price1.li2":"Vaste prijs, vooraf afgesproken",
+    "price1.li3":"Direct contact met Kevin","price1.li4":"Geleverd binnen een duidelijke planning","price1.cta":"Start een project",
+    "price2.badge":"Meest gekozen","price2.title":"3-maandenpakket","price2.desc":"Volledige bedrijfsondersteuning gedurende drie maanden.",
+    "price2.li1":"Meerdere diensten, naar behoefte","price2.li2":"Maandelijkse P&L-rapportage",
+    "price2.li3":"Doorlopende ondersteuning & advies","price2.li4":"Direct contact met Kevin, wanneer nodig",
+    "price2.cta":"Boek kennismakingsgesprek",
+    "maintenance.h4":"Wil je dat het blijft draaien? Voeg maandelijks onderhoud toe.",
+    "maintenance.p":"Optionele toevoeging bij elk project — updates, fixes en kleine wijzigingen elke maand geregeld, zonder losse facturen.",
+    "maintenance.per":"/ maand<br>optioneel",
+    "cta.h2":"Begin met een eerlijk gesprek.",
+    "cta.p":"Gratis kennismakingsgesprek van 1 uur. Geen pitch, geen druk — gewoon een eerlijke blik op wat je bedrijf echt nodig heeft.",
+    "cta.btn":"Boek je gratis gesprek",
+    "footer.text":"Botte waarheid. Operaties, IT & Consulting voor bedrijven die resultaten willen, geen rapporten.",
+    "pay.tag":"Hoe je betaalt","pay.h2":"Betaal zoals het jou uitkomt.",
+    "pay.p":"PayPal of Klarna — kies wat je vertrouwt. Nooit toeslagen op kaartbetalingen.",
+    "fees.tag":"Volledige transparantie","fees.h2":"Wat betalingsverwerking echt kost.",
+    "fees.p":"We rekenen niets extra. Dit is precies wat Klarna en PayPal ons per pakket kosten — de prijs die je ziet is de prijs die telt.",
+    "fees.col.plan":"Pakket","fees.col.klarna":"Klarna-kosten (wij betalen)","fees.col.paypal":"PayPal-kosten (wij betalen)",
+    "fees.row1":"Losse dienst","fees.row2":"3-maandenpakket","fees.row3":"Maandelijks onderhoud",
+    "fees.note":"Cijfers zijn indicatieve tarieven van betalingsverwerkers per 2026 en kunnen licht afwijken per valuta en kaarttype — maar worden nooit opgehoogd op jouw factuur."
+  },
+  sv: {
+    "nav.about":"Om oss","nav.services":"Tjänster","nav.pricing":"Priser","nav.cta":"Boka gratis samtal",
+    "hero.eyebrow":"Verksamhet · IT · Konsulting",
+    "hero.title":"Rakt på sak. <em>Ärligt</em> arbete. Riktiga resultat.",
+    "hero.sub":"Bluuth bygger affärsplaner, webbplatser, verktyg och rapportsystem som faktiskt driver ditt företag — inga floskler, inga extraerbjudanden, inget krångel. Bara ett ärligt svar och ett jobb gjort rätt.",
+    "hero.btn1":"Boka ditt kostnadsfria samtal","hero.btn2":"Se priser",
+    "strip.title1":"100 % ditt","strip.desc1":"Allt vi bygger är och förblir din egendom — vi sköter bara underhållet om du vill.",
+    "strip.title2":"Allt under ett tak","strip.desc2":"Från affärsplan till hemsida till rapportering — alla dina företagsbehov på ett ställe.",
+    "strip.title3":"Direktkontakt","strip.desc3":"Du pratar alltid med Kevin. Inga account managers, inga mellanhänder.",
+    "quote.text":"De flesta konsulter säljer dig en plan. Jag bygger själva grejen.",
+    "quote.attr":"— Kevin Doesburg, Grundare av Bluuth",
+    "about.tag":"Varför Bluuth","about.h2":"En operativ person, inte ett Powerpoint.",
+    "about.p1":"Bluuth är inte en byrå full av teori. Det är byggt på års erfarenhet av daglig drift på flera platser — där \"planen\" måste överleva ett verkligt tisdagspass.",
+    "about.p2":"Vi säljer dig inte på AI. Vi använder smarta verktyg i bakgrunden för att gå snabbare — men relationen är alltid människa till människa. Du pratar med personen som gör jobbet.",
+    "about.li1":"Praktisk erfarenhet som operativ chef på 10+ platser",
+    "about.li2":"Certifierad inom Anthropic & Microsoft Azure",
+    "about.li3":"Har redan byggt schema- och rapportverktyg som används av kunder",
+    "about.li4":"Allt vi bygger är din egendom — vi sköter bara underhållet",
+    "about.li5":"Kostnadsfritt 1-timmes samtal innan du bestämmer dig för något",
+    "work.tag":"Kundarbete","work.h2":"Företag vi bygger åt.","work.current":"Pågående","work.finished":"Levererat",
+    "services.tag":"Vad vi bygger","services.h2":"Ett jobb. Ett fast pris.",
+    "services.p":"Välj exakt vad ditt företag behöver — varje tjänst nedan kostar €375, fristående, ingen paketering krävs.",
+    "services.notlisted":"Ser du inte det du behöver? Chansen är stor att jag ändå kan bygga det —",
+    "services.notlisted.cta":"hör av dig så pratar vi.",
+    "service1.title":"Affärsplan","service1.desc":"En plan byggd för att faktiskt användas, inte arkiveras.",
+    "service2.title":"Webbplatsbygge","service2.desc":"Snabb, ren, mobilanpassad — byggd och lanserad åt dig.",
+    "service3.title":"App-/verktygsbygge","service3.desc":"Skräddarsydda interna verktyg som löser ett specifikt problem.",
+    "service4.title":"Uppsättning av resultatrapport","service4.desc":"Känn dina siffror utan att jaga ett kalkylark.",
+    "service5.title":"Schemaverktyg","service5.desc":"Personalschema som matchar hur ditt team faktiskt jobbar.",
+    "service6.title":"Kassaflödesprognos","service6.desc":"Se vad som kommer innan det blir ett problem.",
+    "service7.title":"Verksamhetsgranskning","service7.desc":"En ärlig titt på vad som bromsar er.",
+    "service8.title":"Personalkostnadsanalys","service8.desc":"Förstå exakt var lönekostnaderna tar vägen.",
+    "service9.title":"Marknadsföringsautomation","service9.desc":"System som håller leads i rörelse, på autopilot.",
+    "service10.title":"Uppsättning av sociala medier","service10.desc":"Profiler, struktur och ett postschema som håller i sig.",
+    "service11.title":"Butiksintegration","service11.desc":"Sälj online med betalningar som bara fungerar.",
+    "service12.title":"AI-schemaverktyg","service12.desc":"Tyst automation som sparar timmar varje vecka.",
+    "pricing.tag":"Priser","pricing.h2":"Inga dolda avgifter. Inga överraskningar.",
+    "pricing.p":"Välj en enskild tjänst, eller kör allt med 3-månaderspaketet. Lägg bara till underhåll om du vill.",
+    "price1.title":"Enskild tjänst","price1.desc":"Ett jobb, gjort ordentligt, från början till slut.",
+    "price1.li1":"Vilken tjänst som helst från listan ovan","price1.li2":"Fast pris, avtalat i förväg",
+    "price1.li3":"Direktkontakt med Kevin","price1.li4":"Levereras enligt en tydlig tidsplan","price1.cta":"Starta ett projekt",
+    "price2.badge":"Mest populär","price2.title":"3-månaderspaket","price2.desc":"Fullt affärsstöd under tre månader.",
+    "price2.li1":"Flera tjänster, efter behov","price2.li2":"Månatlig resultatrapportering",
+    "price2.li3":"Löpande affärsstöd & rådgivning","price2.li4":"Direktkontakt med Kevin, när det behövs",
+    "price2.cta":"Boka samtal",
+    "maintenance.h4":"Vill du att det ska hållas igång? Lägg till månatligt underhåll.",
+    "maintenance.p":"Valfritt tillägg till alla projekt — uppdateringar, fixar och mindre ändringar hanteras varje månad, utan separata fakturor.",
+    "maintenance.per":"/ månad<br>valfritt",
+    "cta.h2":"Börja med ett ärligt samtal.",
+    "cta.p":"Kostnadsfritt 1-timmes samtal. Ingen säljpitch, ingen press — bara en ärlig titt på vad ditt företag verkligen behöver.",
+    "cta.btn":"Boka ditt gratis samtal",
+    "footer.text":"Rakt på sak. Verksamhet, IT & konsulting för företag som vill ha resultat, inte rapporter.",
+    "pay.tag":"Så betalar du","pay.h2":"Betala på det sätt som passar dig.",
+    "pay.p":"PayPal eller Klarna — välj det du litar på. Aldrig några kortavgifter.",
+    "fees.tag":"Full transparens","fees.h2":"Vad betalningshantering faktiskt kostar.",
+    "fees.p":"Vi lägger inte på något extra. Här är exakt vad Klarna och PayPal tar av oss per paket — priset du ser är priset som gäller.",
+    "fees.col.plan":"Paket","fees.col.klarna":"Klarna-avgift (vi betalar)","fees.col.paypal":"PayPal-avgift (vi betalar)",
+    "fees.row1":"Enskild tjänst","fees.row2":"3-månaderspaket","fees.row3":"Månatligt underhåll",
+    "fees.note":"Siffrorna är ungefärliga processoravgifter från 2026 och kan variera något med valuta och korttyp — men de läggs aldrig på din faktura."
+  },
+  de: {
+    "nav.about":"Über uns","nav.services":"Leistungen","nav.pricing":"Preise","nav.cta":"Kostenloses Gespräch buchen",
+    "hero.eyebrow":"Betrieb · IT · Beratung",
+    "hero.title":"Klare Ansagen. <em>Ehrliche</em> Arbeit. Echte Ergebnisse.",
+    "hero.sub":"Bluuth entwickelt Geschäftspläne, Websites, Tools und Reporting-Systeme, die dein Unternehmen wirklich am Laufen halten — kein Fachchinesisch, kein Upselling, kein Schnickschnack. Nur eine ehrliche Antwort und ein Job, der richtig erledigt wird.",
+    "hero.btn1":"Kostenloses Erstgespräch buchen","hero.btn2":"Preise ansehen",
+    "strip.title1":"100 % deins","strip.desc1":"Alles, was wir bauen, gehört dir und bleibt dein Eigentum — wir kümmern uns nur um die Wartung, wenn du das möchtest.",
+    "strip.title2":"Alles unter einem Dach","strip.desc2":"Vom Geschäftsplan bis zur Website bis zum Reporting — all deine Business-Bedürfnisse an einem Ort.",
+    "strip.title3":"Direkter Kontakt","strip.desc3":"Du sprichst immer mit Kevin. Keine Account-Manager, keine Zwischenhändler.",
+    "quote.text":"Die meisten Berater verkaufen dir einen Plan. Ich baue das Ding.",
+    "quote.attr":"— Kevin Doesburg, Gründer von Bluuth",
+    "about.tag":"Warum Bluuth","about.h2":"Ein Macher, keine Folienshow.",
+    "about.p1":"Bluuth ist keine Agentur voller Theorie. Es basiert auf jahrelanger Erfahrung im täglichen Betrieb an mehreren Standorten — dort, wo „der Plan“ eine echte Dienstagsschicht überstehen muss.",
+    "about.p2":"Wir verkaufen dir keine KI-Story. Wir nutzen smarte Tools im Hintergrund, um schneller zu sein — aber der Kontakt bleibt immer von Mensch zu Mensch. Du sprichst mit der Person, die die Arbeit macht.",
+    "about.li1":"Praktische Betriebserfahrung an 10+ Standorten",
+    "about.li2":"Zertifiziert bei Anthropic & Microsoft Azure",
+    "about.li3":"Bereits Planungs- und Reporting-Tools gebaut, die bei Kunden live laufen",
+    "about.li4":"Alles, was wir bauen, gehört dir — wir übernehmen nur die Wartung",
+    "about.li5":"Kostenloses 1-Stunden-Erstgespräch, bevor du dich festlegst",
+    "work.tag":"Kundenprojekte","work.h2":"Unternehmen, für die wir bauen.","work.current":"In Arbeit","work.finished":"Abgeschlossen",
+    "services.tag":"Was wir bauen","services.h2":"Ein Job. Ein Festpreis.",
+    "services.p":"Wähle genau das, was dein Unternehmen braucht — jede Leistung unten kostet €375, einzeln buchbar, kein Bundle nötig.",
+    "services.notlisted":"Nicht dabei, was du brauchst? Wahrscheinlich kann ich es trotzdem bauen —",
+    "services.notlisted.cta":"melde dich, dann besprechen wir es.",
+    "service1.title":"Geschäftsplan","service1.desc":"Ein Plan, der wirklich genutzt wird, nicht abgeheftet wird.",
+    "service2.title":"Website-Aufbau","service2.desc":"Schnell, klar, mobilfreundlich — für dich gebaut und live geschaltet.",
+    "service3.title":"App-/Tool-Entwicklung","service3.desc":"Individuelle interne Tools, die ein konkretes Problem lösen.",
+    "service4.title":"GuV-Reporting-Setup","service4.desc":"Kenne deine Zahlen, ohne einer Tabelle hinterherzujagen.",
+    "service5.title":"Dienstplan-Tool","service5.desc":"Personalplanung, die zu deinem Team passt.",
+    "service6.title":"Cashflow-Prognose","service6.desc":"Sieh, was kommt, bevor es zum Problem wird.",
+    "service7.title":"Betriebs-Audit","service7.desc":"Ein ehrlicher Blick darauf, was euch bremst.",
+    "service8.title":"Personalkostenanalyse","service8.desc":"Verstehe genau, wohin deine Lohnkosten fließen.",
+    "service9.title":"Marketing-Automatisierung","service9.desc":"Systeme, die Leads automatisch weiterbewegen.",
+    "service10.title":"Social-Media-Setup","service10.desc":"Profile, Struktur und ein Postingplan, der hält.",
+    "service11.title":"Shop-Integration","service11.desc":"Online verkaufen mit Zahlungen, die einfach funktionieren.",
+    "service12.title":"KI-Planungstools","service12.desc":"Stille Automatisierung, die jede Woche Stunden spart.",
+    "pricing.tag":"Preise","pricing.h2":"Keine versteckten Kosten. Keine Überraschungen.",
+    "pricing.p":"Wähle eine einzelne Leistung oder geh mit dem 3-Monats-Paket all-in. Wartung nur, wenn du sie willst.",
+    "price1.title":"Einzelleistung","price1.desc":"Ein Job, sauber erledigt, von Anfang bis Ende.",
+    "price1.li1":"Jede Leistung aus der Liste oben","price1.li2":"Festpreis, vorab vereinbart",
+    "price1.li3":"Direkter Kontakt mit Kevin","price1.li4":"Lieferung nach klarem Zeitplan","price1.cta":"Projekt starten",
+    "price2.badge":"Am beliebtesten","price2.title":"3-Monats-Paket","price2.desc":"Volle Business-Unterstützung über drei Monate.",
+    "price2.li1":"Mehrere Leistungen, nach Bedarf","price2.li2":"Monatliches GuV-Reporting",
+    "price2.li3":"Laufende Unterstützung & Beratung","price2.li4":"Direkter Zugang zu Kevin, wann immer nötig",
+    "price2.cta":"Erstgespräch buchen",
+    "maintenance.h4":"Soll es am Laufen bleiben? Monatliche Wartung dazubuchen.",
+    "maintenance.p":"Optionales Add-on zu jedem Projekt — Updates, Fixes und kleine Änderungen jeden Monat erledigt, ohne Einzelrechnung.",
+    "maintenance.per":"/ Monat<br>optional",
+    "cta.h2":"Starte mit einem ehrlichen Gespräch.",
+    "cta.p":"Kostenloses 1-Stunden-Erstgespräch. Kein Pitch, kein Druck — nur ein ehrlicher Blick darauf, was dein Unternehmen wirklich braucht.",
+    "cta.btn":"Kostenloses Gespräch buchen",
+    "footer.text":"Klartext. Betrieb, IT & Beratung für Unternehmen, die Ergebnisse wollen, keine Berichte.",
+    "pay.tag":"So zahlst du","pay.h2":"Zahle, wie es für dich passt.",
+    "pay.p":"PayPal oder Klarna — wähle, wem du vertraust. Niemals Kartenaufschläge.",
+    "fees.tag":"Volle Transparenz","fees.h2":"Was die Zahlungsabwicklung wirklich kostet.",
+    "fees.p":"Wir schlagen nichts drauf. Das hier ist genau das, was Klarna und PayPal uns pro Paket berechnen — der Preis, den du siehst, ist der Preis, der zählt.",
+    "fees.col.plan":"Paket","fees.col.klarna":"Klarna-Gebühr (wir zahlen)","fees.col.paypal":"PayPal-Gebühr (wir zahlen)",
+    "fees.row1":"Einzelleistung","fees.row2":"3-Monats-Paket","fees.row3":"Monatliche Wartung",
+    "fees.note":"Die Zahlen sind ungefähre Anbietergebühren, Stand 2026, und können je nach Währung und Kartenart leicht abweichen — aber sie werden nie auf deine Rechnung aufgeschlagen."
+  }
+};
+
+function applyLang(lang){
+  const dict = translations[lang] || translations.en;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-html');
+    if(dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  const sel = document.getElementById('langSelect');
+  if(sel) sel.value = lang;
+  try{ localStorage.setItem('bluuth_lang', lang); }catch(e){}
+}
+
+document.getElementById('langSelect').addEventListener('change', e=>applyLang(e.target.value));
+
+let initialLang = 'en';
+try{
+  const saved = localStorage.getItem('bluuth_lang');
+  if(saved && translations[saved]) initialLang = saved;
+}catch(e){}
+applyLang(initialLang);
+
+/* --- Currency conversion ---
+   Rates are EUR-based, approx mid-market as of July 2026.
+   Source: xe.com / Yahoo Finance spot rates. Update periodically. */
+const rates = { EUR: 1, USD: 1.14, GBP: 0.85, SEK: 11.03 };
+const symbols = { EUR: '€', USD: '$', GBP: '£', SEK: '' };
+const suffix = { EUR: '', USD: '', GBP: '', SEK: ' kr' };
+
+function formatMoney(eurAmount, currency, decimals){
+  const rate = rates[currency] !== undefined ? rates[currency] : 1;
+  const converted = eurAmount * rate;
+  const val = decimals ? converted.toFixed(2) : Math.round(converted).toString();
+  return symbols[currency] + val + suffix[currency];
+}
+
+function applyCurrency(currency){
+  document.querySelectorAll('[data-eur]').forEach(el=>{
+    const eur = parseFloat(el.getAttribute('data-eur'));
+    el.textContent = formatMoney(eur, currency, false);
+  });
+  document.querySelectorAll('[data-eur-fee]').forEach(el=>{
+    const eur = parseFloat(el.getAttribute('data-eur-fee'));
+    el.textContent = formatMoney(eur, currency, true);
+  });
+  const sel = document.getElementById('currencySelect');
+  if(sel) sel.value = currency;
+  try{ localStorage.setItem('bluuth_currency', currency); }catch(e){}
+}
+
+document.getElementById('currencySelect').addEventListener('change', e=>applyCurrency(e.target.value));
+
+let initialCurrency = 'EUR';
+try{
+  const savedCur = localStorage.getItem('bluuth_currency');
+  if(savedCur && rates[savedCur] !== undefined) initialCurrency = savedCur;
+}catch(e){}
+applyCurrency(initialCurrency);
+
+/* --- Client work showcase ---
+   Pulls featured projects from the bluuth-portal app. PORTAL_BASE_URL is
+   the ONE place to update if the portal ever moves (see DEPLOY.md /
+   DOMAIN-SETUP.md in bluuth-portal) - it drives both the booking button
+   above and this section. Section stays hidden entirely if there's
+   nothing featured yet, so an empty portal never shows an awkward blank
+   section. */
+const PORTAL_BASE_URL = 'https://portal.bluuth.com';
+
+const bookBtn = document.getElementById('bookCallBtn');
+if (bookBtn) bookBtn.href = PORTAL_BASE_URL + '/book.html';
+
+function escapeHtmlWork(str){
+  const div = document.createElement('div');
+  div.textContent = str == null ? '' : str;
+  return div.innerHTML;
+}
+
+function workCardHtml(entry){
+  return `
+    <div class="work-card">
+      <img src="${PORTAL_BASE_URL}${entry.logoUrl}" alt="${escapeHtmlWork(entry.company || entry.title)} logo" loading="lazy">
+      <div class="wname">${escapeHtmlWork(entry.company || entry.title)}</div>
+      <div class="wservice">${escapeHtmlWork(entry.service)}</div>
+    </div>
+  `;
+}
+
+fetch(PORTAL_BASE_URL + '/api/public/showcase')
+  .then(res => res.ok ? res.json() : null)
+  .then(data => {
+    if (!data) return;
+    const hasCurrent = data.current && data.current.length > 0;
+    const hasFinished = data.finished && data.finished.length > 0;
+    if (!hasCurrent && !hasFinished) return; // nothing featured yet - leave the section hidden
+
+    document.getElementById('work').style.display = '';
+    if (hasCurrent) {
+      document.getElementById('workCurrentBlock').style.display = '';
+      document.getElementById('workCurrentGrid').innerHTML = data.current.map(workCardHtml).join('');
+    }
+    if (hasFinished) {
+      document.getElementById('workFinishedBlock').style.display = '';
+      document.getElementById('workFinishedGrid').innerHTML = data.finished.map(workCardHtml).join('');
+    }
+  })
+  .catch(() => {
+    // Portal unreachable (e.g. laptop/ngrok offline) - fail silently,
+    // the section just stays hidden rather than showing a broken block.
+  });
+</script>
+
+</body>
+</html>
