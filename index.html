@@ -368,12 +368,21 @@
   </div>
 </section>
 
-<section id="work" style="display:none;">
+<section id="work">
   <div class="wrap">
     <div class="section-head">
       <div class="tag" data-i18n="work.tag">Client work</div>
       <h2 data-i18n="work.h2">Businesses we're building for.</h2>
     </div>
+
+    <!-- Trustpilot TrustBox widget - Mini review count/star rating.
+         Business unit id belongs to the Bluuth Trustpilot profile
+         (bluuth.com). Sits between "In progress" and "Delivered" so
+         it's visible regardless of whether client work is featured yet. -->
+    <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="6a644755fb7d067dbf18400f" data-style-height="24px" data-style-width="100%" style="margin-bottom:40px;">
+      <a href="https://www.trustpilot.com/review/bluuth.com" target="_blank" rel="noopener">Trustpilot</a>
+    </div>
+
     <div id="workCurrentBlock" style="display:none;margin-bottom:40px;">
       <h3 class="work-subhead" data-i18n="work.current">In progress</h3>
       <div class="work-grid" id="workCurrentGrid"></div>
@@ -877,9 +886,8 @@ fetch(PORTAL_BASE_URL + '/api/public/showcase')
     if (!data) return;
     const hasCurrent = data.current && data.current.length > 0;
     const hasFinished = data.finished && data.finished.length > 0;
-    if (!hasCurrent && !hasFinished) return; // nothing featured yet - leave the section hidden
+    if (!hasCurrent && !hasFinished) return; // nothing featured yet - the Trustpilot widget above still shows
 
-    document.getElementById('work').style.display = '';
     if (hasCurrent) {
       document.getElementById('workCurrentBlock').style.display = '';
       document.getElementById('workCurrentGrid').innerHTML = data.current.map(workCardHtml).join('');
@@ -905,6 +913,10 @@ fetch(PORTAL_BASE_URL + '/api/public/showcase')
     });
   }
 </script>
+
+<!-- Trustpilot bootstrap - renders the .trustpilot-widget div in the
+     "Client work" section above into the live star-rating widget. -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
 </body>
 </html>
