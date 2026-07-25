@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bluuth — Blunt. Honest. Done.</title>
+<!-- PWA: lets Android/Chrome users "Add to Home Screen" and get an
+     app-like icon + standalone window, no app store needed. -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0b3d2e">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <style>
   :root{
     --green-deep:#0b3d2e;
@@ -887,6 +893,17 @@ fetch(PORTAL_BASE_URL + '/api/public/showcase')
     // Portal unreachable (e.g. laptop/ngrok offline) - fail silently,
     // the section just stays hidden rather than showing a broken block.
   });
+</script>
+
+<script>
+  // Registers the PWA service worker - enables "Add to Home Screen" on
+  // Android/Chrome. Safe no-op on browsers without support (e.g. old
+  // Safari) since it's feature-detected first.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
 </script>
 
 </body>
