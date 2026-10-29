@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bluuth — Blunt. Honest. Done.</title>
-<meta name="description" content="Bluuth builds business plans, websites, tools and reporting for small businesses. Flat €375 per job or €1,500 for 3 months. Free 1-hour discovery call. Based in Dalarna, Sweden.">
+<meta name="description" content="Bluuth builds business plans, websites, tools and reporting for small businesses. Flat €375 per job or €1,500 for 3 months, incl. VAT. Free 1-hour discovery call. Based in Dalarna, Sweden.">
 <link rel="canonical" href="https://bluuth.com/">
 <!-- Open Graph / Twitter link previews. -->
 <meta property="og:type" content="website">
@@ -13,12 +13,16 @@
 <meta property="og:description" content="Business plans, websites, tools and reporting that actually run your business. €375 per job, €1,500 for 3 months. Free discovery call.">
 <meta property="og:url" content="https://bluuth.com/">
 <meta property="og:image" content="https://bluuth.com/icons/icon-512.png">
+<meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bluuth — Blunt. Honest. Done.">
 <meta name="twitter:description" content="Business plans, websites, tools and reporting that actually run your business. €375 per job, €1,500 for 3 months.">
 <meta name="twitter:image" content="https://bluuth.com/icons/icon-512.png">
 <!-- PWA: lets Android/Chrome users "Add to Home Screen" and get an
      app-like icon + standalone window, no app store needed. -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Bluuth","url":"https://bluuth.com/","email":"mailto:kevin.d@bluuth.com","logo":"https://bluuth.com/icons/icon-512.png","image":"https://bluuth.com/icons/icon-512.png","slogan":"Blunt. Honest. Done.","founder":{"@type":"Person","name":"Kevin Doesburg","sameAs":["https://www.linkedin.com/in/kevin-doesburg-43a327276/"]},"sameAs":["https://www.linkedin.com/in/kevin-doesburg-43a327276/"],"areaServed":[{"@type":"Country","name":"Sweden"},{"@type":"Country","name":"Netherlands"},{"@type":"Country","name":"United Kingdom"}]}
+</script>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#0b3d2e">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
@@ -193,6 +197,7 @@
   }
   .price-card h3{font-size:20px;font-weight:800;margin-bottom:8px;}
   .price-card .price-amt{font-size:44px;font-weight:800;letter-spacing:-1px;margin:14px 0 6px;}
+  .vat-note{font-size:13px;font-weight:600;opacity:0.7;margin:-2px 0 8px;}
   .price-card .price-amt span{font-size:16px;font-weight:600;opacity:0.7;}
   .price-card .price-desc{font-size:14px;opacity:0.75;margin-bottom:24px;}
   .price-card ul{list-style:none;margin-bottom:28px;}
@@ -415,9 +420,11 @@
          Business unit id belongs to the Bluuth Trustpilot profile
          (bluuth.com). Sits between "In progress" and "Delivered" so
          it's visible regardless of whether client work is featured yet. -->
+    <!-- HIDDEN (29 Oct 2026) until real reviews exist; restore by un-commenting:
     <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="6a644755fb7d067dbf18400f" data-style-height="24px" data-style-width="100%" style="margin-bottom:40px;">
       <a href="https://www.trustpilot.com/review/bluuth.com" target="_blank" rel="noopener">Trustpilot</a>
     </div>
+    -->
 
     <div id="workCurrentBlock" style="display:none;margin-bottom:40px;">
       <h3 class="work-subhead" data-i18n="work.current">In progress</h3>
@@ -470,6 +477,7 @@
       <div class="price-card">
         <h3 data-i18n="price1.title">Single Service</h3>
         <div class="price-amt" data-eur="375">€375</div>
+        <div class="vat-note" data-i18n="price.vat">incl. VAT</div>
         <div class="price-desc" data-i18n="price1.desc">One deliverable, done properly, start to finish.</div>
         <ul>
           <li data-i18n="price1.li1">Any one service from the list above</li>
@@ -486,6 +494,7 @@
         <div class="price-badge" data-i18n="price2.badge">Most popular</div>
         <h3 data-i18n="price2.title">3-Month Package</h3>
         <div class="price-amt" data-eur="1500">€1,500</div>
+        <div class="vat-note" data-i18n="price.vat">incl. VAT</div>
         <div class="price-desc" data-i18n="price2.desc">Full business support across three months.</div>
         <ul>
           <li data-i18n="price2.li1">Multiple services, as needed</li>
@@ -505,9 +514,19 @@
         <p data-i18n="maintenance.p">Optional add-on for any project — updates, fixes, and small changes handled for you every month, no separate invoice each time.</p>
       </div>
       <div class="m-right">
-        <span class="amt" data-eur="50">€50</span>
+        <span class="amt" data-eur="50">€50</span> <span class="vat-note" data-i18n="price.vat">incl. VAT</span>
         <span class="per" data-i18n-html="maintenance.per">/ month<br>optional</span>
       </div>
+    </div>
+
+    <div class="call-cta" style="margin-top:40px;text-align:center;">
+      <h3 data-i18n="call.h3" style="font-size:22px;margin-bottom:12px;">What happens on the call</h3>
+      <ul style="list-style:none;padding:0;margin:0 auto 20px;max-width:560px;line-height:1.7;">
+        <li data-i18n="call.li1">One hour, free. You talk through your problem.</li>
+        <li data-i18n="call.li2">I tell you bluntly if and how I can help — or that I can't.</li>
+        <li data-i18n="call.li3">No obligation. Nothing to prepare beyond a short description of the issue.</li>
+      </ul>
+      <a href="https://portal.bluuth.com/book.html" target="_blank" rel="noopener" class="btn-primary" data-i18n="cta.book">Book a free call</a>
     </div>
   </div>
 </section>
@@ -526,8 +545,8 @@
       <div class="invoice-step"><div class="picon">2</div><h4 data-i18n="pay.s2.t">Scope in writing</h4><p data-i18n="pay.s2.d">You get a short written scope with the fixed price. Nothing starts until you agree.</p></div>
       <div class="invoice-step"><div class="picon">3</div><h4 data-i18n="pay.s3.t">Invoice, 14 days</h4><p data-i18n="pay.s3.d">You receive an invoice with 14 days to pay by bank transfer.</p></div>
     </div>
-    <!-- TODO (Kevin): confirm 14-day terms, whether VAT (moms) is added on top, and
-         whether larger jobs/the 3-month package are invoiced up front, per month or on delivery. -->
+    <!-- VAT resolved 29 Oct 2026: all prices are shown incl. VAT.
+         TODO (Kevin): confirm 14-day terms and whether the 3-month package is invoiced up front, per month or on delivery. -->
   </div>
 </section>
 
@@ -547,7 +566,7 @@
       <p data-i18n="contact.p">Send an email. Kevin reads and answers every message himself, usually within one working day.</p>
     </div>
     <a class="contact-email" href="mailto:kevin.d@bluuth.com">kevin.d@bluuth.com</a>
-    <!-- TODO: LinkedIn URL -->
+    <p style="margin-top:14px;"><a href="https://www.linkedin.com/in/kevin-doesburg-43a327276/" target="_blank" rel="noopener" data-i18n="contact.linkedin">Kevin Doesburg on LinkedIn</a></p>
   </div>
 </section>
 
@@ -561,7 +580,9 @@
     <div class="flinks">
       <a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a>
       <a href="terms.html" data-i18n="footer.terms">Terms</a>
+      <a href="https://www.linkedin.com/in/kevin-doesburg-43a327276/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
+    <div style="margin-top:16px;"><a href="https://portal.bluuth.com/book.html" target="_blank" rel="noopener" class="btn-primary" data-i18n="cta.book">Book a free call</a></div>
   </div>
 </footer>
 
@@ -633,7 +654,8 @@ const translations = {
     "contact.h2":"Rather write than call?",
     "contact.p":"Send an email. Kevin reads and answers every message himself, usually within one working day.",
     "footer.privacy":"Privacy policy",
-    "footer.terms":"Terms"
+    "footer.terms":"Terms",
+    "price.vat":"incl. VAT","call.h3":"What happens on the call","call.li1":"One hour, free. You talk through your problem.","call.li2":"I tell you bluntly if and how I can help — or that I can't.","call.li3":"No obligation. Nothing to prepare beyond a short description of the issue.","cta.book":"Book a free call","contact.linkedin":"Kevin Doesburg on LinkedIn"
   },
   nl: {
     "nav.about":"Over ons","nav.services":"Diensten","nav.pricing":"Prijzen","nav.login":"Klant login","nav.cta":"Gratis gesprek boeken",
@@ -701,7 +723,8 @@ const translations = {
     "contact.h2":"Liever mailen dan bellen?",
     "contact.p":"Stuur een e-mail. Kevin leest en beantwoordt elk bericht zelf, meestal binnen één werkdag.",
     "footer.privacy":"Privacybeleid",
-    "footer.terms":"Voorwaarden"
+    "footer.terms":"Voorwaarden",
+    "price.vat":"incl. btw","call.h3":"Wat gebeurt er in het gesprek","call.li1":"Eén uur, gratis. Jij vertelt wat het probleem is.","call.li2":"Ik zeg je eerlijk of en hoe ik kan helpen — of dat ik het niet kan.","call.li3":"Geen verplichtingen. Je hoeft niets voor te bereiden behalve een korte omschrijving van het probleem.","cta.book":"Boek een gratis gesprek","contact.linkedin":"Kevin Doesburg op LinkedIn"
   },
   sv: {
     "nav.about":"Om oss","nav.services":"Tjänster","nav.pricing":"Priser","nav.login":"Kundinloggning","nav.cta":"Boka gratis samtal",
@@ -769,7 +792,8 @@ const translations = {
     "contact.h2":"Hellre mejla än ringa?",
     "contact.p":"Skicka ett mejl. Kevin läser och svarar på varje meddelande själv, oftast inom en arbetsdag.",
     "footer.privacy":"Integritetspolicy",
-    "footer.terms":"Villkor"
+    "footer.terms":"Villkor",
+    "price.vat":"inkl. moms","call.h3":"Vad händer under samtalet","call.li1":"En timme, gratis. Du berättar om ditt problem.","call.li2":"Jag säger rakt ut om och hur jag kan hjälpa — eller att jag inte kan.","call.li3":"Inga förpliktelser. Inget att förbereda utöver en kort beskrivning av problemet.","cta.book":"Boka ett gratis samtal","contact.linkedin":"Kevin Doesburg på LinkedIn"
   },
   de: {
     "nav.about":"Über uns","nav.services":"Leistungen","nav.pricing":"Preise","nav.login":"Kunden-Login","nav.cta":"Kostenloses Gespräch buchen",
@@ -837,7 +861,8 @@ const translations = {
     "contact.h2":"Lieber schreiben als telefonieren?",
     "contact.p":"Schick eine E-Mail. Kevin liest und beantwortet jede Nachricht selbst, meist innerhalb eines Werktags.",
     "footer.privacy":"Datenschutz",
-    "footer.terms":"AGB"
+    "footer.terms":"AGB",
+    "price.vat":"inkl. MwSt.","call.h3":"Was im Gespräch passiert","call.li1":"Eine Stunde, kostenlos. Du schilderst dein Problem.","call.li2":"Ich sage dir offen, ob und wie ich helfen kann — oder dass ich es nicht kann.","call.li3":"Keine Verpflichtung. Nichts vorzubereiten außer einer kurzen Beschreibung des Problems.","cta.book":"Kostenloses Gespräch buchen","contact.linkedin":"Kevin Doesburg auf LinkedIn"
   }
 };
 
@@ -974,7 +999,7 @@ fetch(PORTAL_BASE_URL + '/api/public/showcase')
 
 <!-- Trustpilot bootstrap - renders the .trustpilot-widget div in the
      "Client work" section above into the live star-rating widget. -->
-<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- HIDDEN with the widget above: <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script> -->
 
 </body>
 </html>
