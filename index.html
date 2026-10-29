@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bluuth — Blunt. Honest. Done.</title>
-<meta name="description" content="Bluuth builds business plans, websites, tools and reporting for small businesses. Flat €375 per job or €1,500 for 3 months, incl. VAT. Free 1-hour discovery call. Based in Dalarna, Sweden.">
+<meta name="description" content="Bluuth builds business plans, websites, tools and reporting for small businesses. Fixed prices from €595 per job, builds from €1,095, monthly support €995 — all excl. VAT. Free 1-hour discovery call. Based in Dalarna, Sweden.">
 <link rel="canonical" href="https://bluuth.com/">
 <!-- Open Graph / Twitter link previews. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bluuth">
 <meta property="og:title" content="Bluuth — Blunt. Honest. Done.">
-<meta property="og:description" content="Business plans, websites, tools and reporting that actually run your business. €375 per job, €1,500 for 3 months. Free discovery call.">
+<meta property="og:description" content="Business plans, websites, tools and reporting that actually run your business. Small jobs from €595, builds from €1,095, monthly support €995 (excl. VAT). Free discovery call.">
 <meta property="og:url" content="https://bluuth.com/">
 <meta property="og:image" content="https://bluuth.com/icons/icon-512.png">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bluuth — Blunt. Honest. Done.">
-<meta name="twitter:description" content="Business plans, websites, tools and reporting that actually run your business. €375 per job, €1,500 for 3 months.">
+<meta name="twitter:description" content="Business plans, websites, tools and reporting that actually run your business. Small jobs from €595, builds from €1,095, monthly support €995 (excl. VAT).">
 <meta name="twitter:image" content="https://bluuth.com/icons/icon-512.png">
 <!-- PWA: lets Android/Chrome users "Add to Home Screen" and get an
      app-like icon + standalone window, no app store needed. -->
@@ -184,7 +184,12 @@
 
   /* PRICING */
   .pricing-section{background:var(--green-mint);}
-  .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px;}
+  .tier-tag{display:inline-block;font-size:12px;font-weight:700;color:var(--green-deep);background:rgba(11,61,46,0.08);border-radius:999px;padding:3px 10px;margin:4px 0 8px;}
+  .offers{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 28px;}
+  .offer{border:2px dashed var(--green);border-radius:14px;padding:18px 20px;}
+  .offer h4{margin:0 0 6px;font-size:17px;}
+  .offer p{margin:0;font-size:14px;opacity:0.85;}
+  .pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-bottom:28px;}
   .price-card{
     background:#fff;border-radius:20px;padding:40px;border:1px solid var(--line);position:relative;
   }
@@ -288,6 +293,7 @@
     .about-grid{grid-template-columns:1fr;}
     .services-grid{grid-template-columns:1fr 1fr;}
     .pricing-grid{grid-template-columns:1fr;}
+    .offers{grid-template-columns:1fr;}
     .promise-grid{grid-template-columns:1fr;}
     .navlinks{display:none;}
     /* Without this the lang/currency selects and the CTA button were
@@ -442,25 +448,25 @@
     <div class="section-head">
       <div class="tag" data-i18n="services.tag">What we build</div>
       <h2 data-i18n="services.h2">One job. One flat price.</h2>
-      <p data-i18n="services.p">Pick exactly what your business needs — every deliverable below is €375, on its own, no bundling required.</p>
+      <p data-i18n="services.p">Every deliverable has a fixed price, agreed up front. Small jobs are €595, bigger builds €1,095 (excl. VAT). No bundling required.</p>
       <p style="margin-top:10px;font-weight:600;color:var(--green-deep);">
         <span data-i18n="services.notlisted">Don't see what you need? Chances are I can still build it —</span>
         <a href="#discovery" style="text-decoration:underline;" data-i18n="services.notlisted.cta">get in touch and let's talk.</a>
       </p>
     </div>
     <div class="services-grid">
-      <div class="service-card"><div class="icon">01</div><h3 data-i18n="service1.title">Business Plan</h3><p data-i18n="service1.desc">A plan built to actually be used, not filed away.</p></div>
-      <div class="service-card"><div class="icon">02</div><h3 data-i18n="service2.title">Website Build</h3><p data-i18n="service2.desc">Fast, clean, mobile-ready — built and launched for you.</p></div>
-      <div class="service-card"><div class="icon">03</div><h3 data-i18n="service3.title">App / Tool Build</h3><p data-i18n="service3.desc">Custom internal tools that fix a specific problem.</p></div>
-      <div class="service-card"><div class="icon">04</div><h3 data-i18n="service4.title">P&amp;L Reporting Setup</h3><p data-i18n="service4.desc">Know your numbers without chasing a spreadsheet.</p></div>
-      <div class="service-card"><div class="icon">05</div><h3 data-i18n="service5.title">Scheduling Tool</h3><p data-i18n="service5.desc">Staff scheduling that matches how your team actually works.</p></div>
-      <div class="service-card"><div class="icon">06</div><h3 data-i18n="service6.title">Cash Flow Forecasting</h3><p data-i18n="service6.desc">See what's coming before it becomes a problem.</p></div>
-      <div class="service-card"><div class="icon">07</div><h3 data-i18n="service7.title">Operations Audit</h3><p data-i18n="service7.desc">An honest look at what's slowing you down.</p></div>
-      <div class="service-card"><div class="icon">08</div><h3 data-i18n="service8.title">Staff Cost Analysis</h3><p data-i18n="service8.desc">Understand exactly where labor spend is going.</p></div>
-      <div class="service-card"><div class="icon">09</div><h3 data-i18n="service9.title">Marketing Automation</h3><p data-i18n="service9.desc">Set-and-forget systems that keep leads moving.</p></div>
-      <div class="service-card"><div class="icon">10</div><h3 data-i18n="service10.title">Social Media Setup</h3><p data-i18n="service10.desc">Profiles, structure and a posting system that sticks.</p></div>
-      <div class="service-card"><div class="icon">11</div><h3 data-i18n="service11.title">Storefront Integration</h3><p data-i18n="service11.desc">Sell online with payments that just work.</p></div>
-      <div class="service-card"><div class="icon">12</div><h3 data-i18n="service12.title">AI Scheduling Tools</h3><p data-i18n="service12.desc">Quiet automation that saves hours every week.</p></div>
+      <div class="service-card"><div class="icon">01</div><h3 data-i18n="service1.title">Business Plan</h3><div class="tier-tag" data-i18n="tier.b">Build · €1,095</div><p data-i18n="service1.desc">A plan built to actually be used, not filed away.</p></div>
+      <div class="service-card"><div class="icon">02</div><h3 data-i18n="service2.title">Website Build</h3><div class="tier-tag" data-i18n="tier.b">Build · €1,095</div><p data-i18n="service2.desc">Fast, clean, mobile-ready — built and launched for you.</p></div>
+      <div class="service-card"><div class="icon">03</div><h3 data-i18n="service3.title">App / Tool Build</h3><div class="tier-tag" data-i18n="tier.b">Build · €1,095</div><p data-i18n="service3.desc">Custom internal tools that fix a specific problem.</p></div>
+      <div class="service-card"><div class="icon">04</div><h3 data-i18n="service4.title">P&amp;L Reporting Setup</h3><div class="tier-tag" data-i18n="tier.b">Build · €1,095</div><p data-i18n="service4.desc">Know your numbers without chasing a spreadsheet.</p></div>
+      <div class="service-card"><div class="icon">05</div><h3 data-i18n="service5.title">Scheduling Tool</h3><div class="tier-tag" data-i18n="tier.a">Small job · €595</div><p data-i18n="service5.desc">Staff scheduling that matches how your team actually works.</p></div>
+      <div class="service-card"><div class="icon">06</div><h3 data-i18n="service6.title">Cash Flow Forecasting</h3><div class="tier-tag" data-i18n="tier.b">Build · €1,095</div><p data-i18n="service6.desc">See what's coming before it becomes a problem.</p></div>
+      <div class="service-card"><div class="icon">07</div><h3 data-i18n="service7.title">Operations Audit</h3><div class="tier-tag" data-i18n="tier.a">Small job · €595</div><p data-i18n="service7.desc">An honest look at what's slowing you down.</p></div>
+      <div class="service-card"><div class="icon">08</div><h3 data-i18n="service8.title">Staff Cost Analysis</h3><div class="tier-tag" data-i18n="tier.a">Small job · €595</div><p data-i18n="service8.desc">Understand exactly where labor spend is going.</p></div>
+      <div class="service-card"><div class="icon">09</div><h3 data-i18n="service9.title">Marketing Automation</h3><div class="tier-tag" data-i18n="tier.b">Build · €1,095</div><p data-i18n="service9.desc">Set-and-forget systems that keep leads moving.</p></div>
+      <div class="service-card"><div class="icon">10</div><h3 data-i18n="service10.title">Social Media Setup</h3><div class="tier-tag" data-i18n="tier.a">Small job · €595</div><p data-i18n="service10.desc">Profiles, structure and a posting system that sticks.</p></div>
+      <div class="service-card"><div class="icon">11</div><h3 data-i18n="service11.title">Storefront Integration</h3><div class="tier-tag" data-i18n="tier.b">Build · €1,095</div><p data-i18n="service11.desc">Sell online with payments that just work.</p></div>
+      <div class="service-card"><div class="icon">12</div><h3 data-i18n="service12.title">AI Scheduling Tools</h3><div class="tier-tag" data-i18n="tier.a">Small job · €595</div><p data-i18n="service12.desc">Quiet automation that saves hours every week.</p></div>
     </div>
   </div>
 </section>
@@ -473,39 +479,56 @@
       <p data-i18n="pricing.p">Choose a single deliverable, or go all-in with the 3-month package. Add ongoing maintenance only if you want it.</p>
     </div>
 
+    <!-- Pricing set 29 Oct 2026: ~35% below market midpoint, excl. VAT. Old: €375/job, €1,500/3 months (incl. VAT). -->
     <div class="pricing-grid">
       <div class="price-card">
-        <h3 data-i18n="price1.title">Single Service</h3>
-        <div class="price-amt" data-eur="375">€375</div>
-        <div class="vat-note" data-i18n="price.vat">incl. VAT</div>
-        <div class="price-desc" data-i18n="price1.desc">One deliverable, done properly, start to finish.</div>
+        <h3 data-i18n="pa.title">Small Job</h3>
+        <div class="price-amt"><span class="amt-n" data-eur="595" style="font-size:inherit;opacity:1;font-weight:inherit;">€595</span></div>
+        <div class="vat-note" data-i18n="price.vat">excl. VAT</div>
+        <div class="price-desc" data-i18n="pa.desc">One focused job: audit, analysis, setup or a simple tool.</div>
         <ul>
-          <li data-i18n="price1.li1">Any one service from the list above</li>
-          <li data-i18n="price1.li2">Fixed price, agreed up front</li>
-          <li data-i18n="price1.li3">Direct communication with Kevin</li>
-          <li data-i18n="price1.li4">Delivered on a clear timeline</li>
+          <li data-i18n="pa.li1">Operations audit, staff cost analysis, social media setup, scheduling tool, AI scheduling tools</li>
+          <li data-i18n="pa.li2">Fixed price, agreed up front</li>
+          <li data-i18n="pa.li3">Direct communication with Kevin</li>
+          <li data-i18n="pa.li4">Delivered on a clear timeline</li>
         </ul>
-        <a href="#discovery" class="price-cta" data-i18n="price1.cta">Start a project</a>
-        <!-- PayPal/Klarna badges removed: no working checkout yet. Payment is by invoice. -->
-        <div class="pay-note" data-i18n="price.paynote">Paid by invoice after the discovery call.</div>
+        <a href="#discovery" class="price-cta" data-i18n="pa.cta">Start a small job</a>
+        <div class="pay-note" data-i18n="pa.pay">Paid by invoice after the scope is agreed.</div>
       </div>
-
+      <div class="price-card">
+        <h3 data-i18n="pb.title">Build</h3>
+        <div class="price-amt"><span class="amt-n" data-eur="1095" style="font-size:inherit;opacity:1;font-weight:inherit;">€1,095</span></div>
+        <div class="vat-note" data-i18n="price.vat">excl. VAT</div>
+        <div class="price-desc" data-i18n="pb.desc">A bigger piece of work, built and handed over working.</div>
+        <ul>
+          <li data-i18n="pb.li1">Website, app/tool, business plan, P&amp;L reporting, cash-flow forecasting, marketing automation, storefront integration</li>
+          <li data-i18n="pb.li2">Fixed price, agreed up front</li>
+          <li data-i18n="pb.li3">Direct communication with Kevin</li>
+          <li data-i18n="pb.li4">Delivered on a clear timeline</li>
+        </ul>
+        <a href="#discovery" class="price-cta" data-i18n="pb.cta">Start a build</a>
+        <div class="pay-note" data-i18n="pb.pay">Paid by invoice after the scope is agreed.</div>
+      </div>
       <div class="price-card featured">
-        <div class="price-badge" data-i18n="price2.badge">Most popular</div>
-        <h3 data-i18n="price2.title">3-Month Package</h3>
-        <div class="price-amt" data-eur="1500">€1,500</div>
-        <div class="vat-note" data-i18n="price.vat">incl. VAT</div>
-        <div class="price-desc" data-i18n="price2.desc">Full business support across three months.</div>
+        <div class="price-badge" data-i18n="pc.badge">Most popular</div>
+        <h3 data-i18n="pc.title">Monthly Support</h3>
+        <div class="price-amt"><span class="amt-n" data-eur="995" style="font-size:inherit;opacity:1;font-weight:inherit;">€995</span><span data-i18n="per.month">/ month</span></div>
+        <div class="vat-note" data-i18n="price.vat">excl. VAT</div>
+        <div class="price-desc" data-i18n="pc.desc">Ongoing help with your business, with a clear cap.</div>
         <ul>
-          <li data-i18n="price2.li1">Multiple services, as needed</li>
-          <li data-i18n="price2.li2">Monthly P&amp;L reporting</li>
-          <li data-i18n="price2.li3">Ongoing business support &amp; advice</li>
-          <li data-i18n="price2.li4">Direct access to Kevin, whenever needed</li>
+          <li data-i18n="pc.li1">Up to 2 working days per month</li>
+          <li data-i18n="pc.li2">Monthly P&amp;L reporting and advice</li>
+          <li data-i18n="pc.li3">Any services from the list, within the 2 days</li>
+          <li data-i18n="pc.li4">Minimum 3 months; extra days quoted first</li>
         </ul>
-        <a href="#discovery" class="price-cta" data-i18n="price2.cta">Book discovery call</a>
-        <!-- PayPal/Klarna badges removed: no working checkout yet. Payment is by invoice. -->
-        <div class="pay-note" data-i18n="price.paynote">Paid by invoice after the discovery call.</div>
+        <a href="#discovery" class="price-cta" data-i18n="pc.cta">Book discovery call</a>
+        <div class="pay-note" data-i18n="pc.pay">Invoiced monthly.</div>
       </div>
+    </div>
+
+    <div class="offers">
+      <div class="offer"><h4 data-i18n="offer1.h">First project: 50% off</h4><p data-i18n="offer1.p">New clients get 50% off their first project. One project per client.</p></div>
+      <div class="offer"><h4 data-i18n="offer2.h">Loyalty: 10% off</h4><p data-i18n="offer2.p">After 6 months of continuous Monthly Support, you pay 10% less than the standard monthly price.</p></div>
     </div>
 
     <div class="maintenance-card">
@@ -514,7 +537,7 @@
         <p data-i18n="maintenance.p">Optional add-on for any project — updates, fixes, and small changes handled for you every month, no separate invoice each time.</p>
       </div>
       <div class="m-right">
-        <span class="amt" data-eur="50">€50</span> <span class="vat-note" data-i18n="price.vat">incl. VAT</span>
+        <span class="amt" data-eur="50">€50</span> <span class="vat-note" data-i18n="price.vat">excl. VAT</span>
         <span class="per" data-i18n-html="maintenance.per">/ month<br>optional</span>
       </div>
     </div>
@@ -545,7 +568,7 @@
       <div class="invoice-step"><div class="picon">2</div><h4 data-i18n="pay.s2.t">Scope in writing</h4><p data-i18n="pay.s2.d">You get a short written scope with the fixed price. Nothing starts until you agree.</p></div>
       <div class="invoice-step"><div class="picon">3</div><h4 data-i18n="pay.s3.t">Invoice, 14 days</h4><p data-i18n="pay.s3.d">You receive an invoice with 14 days to pay by bank transfer.</p></div>
     </div>
-    <!-- VAT resolved 29 Oct 2026: all prices are shown incl. VAT.
+    <!-- VAT: all prices are shown excl. VAT (changed 29 Oct 2026).
          TODO (Kevin): confirm 14-day terms and whether the 3-month package is invoiced up front, per month or on delivery. -->
   </div>
 </section>
@@ -609,7 +632,7 @@ const translations = {
     "about.li5":"Free 1-hour discovery call before you commit to anything",
     "work.tag":"Client work","work.h2":"Businesses we're building for.","work.current":"In progress","work.finished":"Delivered",
     "services.tag":"What we build","services.h2":"One job. One flat price.",
-    "services.p":"Pick exactly what your business needs — every deliverable below is €375, on its own, no bundling required.",
+    "services.p":"Every deliverable has a fixed price, agreed up front. Small jobs are €595, bigger builds €1,095 (excl. VAT). No bundling required.",
     "services.notlisted":"Don't see what you need? Chances are I can still build it —",
     "services.notlisted.cta":"get in touch and let's talk.",
     "service1.title":"Business Plan","service1.desc":"A plan built to actually be used, not filed away.",
@@ -625,7 +648,7 @@ const translations = {
     "service11.title":"Storefront Integration","service11.desc":"Sell online with payments that just work.",
     "service12.title":"AI Scheduling Tools","service12.desc":"Quiet automation that saves hours every week.",
     "pricing.tag":"Pricing","pricing.h2":"No hidden fees. No surprises.",
-    "pricing.p":"Choose a single deliverable, or go all-in with the 3-month package. Add ongoing maintenance only if you want it.",
+    "pricing.p":"A fixed price per job, or monthly support with a clear cap. All prices excl. VAT. Add maintenance only if you want it.",
     "price1.title":"Single Service","price1.desc":"One deliverable, done properly, start to finish.",
     "price1.li1":"Any one service from the list above","price1.li2":"Fixed price, agreed up front",
     "price1.li3":"Direct communication with Kevin","price1.li4":"Delivered on a clear timeline","price1.cta":"Start a project",
@@ -655,7 +678,7 @@ const translations = {
     "contact.p":"Send an email. Kevin reads and answers every message himself, usually within one working day.",
     "footer.privacy":"Privacy policy",
     "footer.terms":"Terms",
-    "price.vat":"incl. VAT","call.h3":"What happens on the call","call.li1":"One hour, free. You talk through your problem.","call.li2":"I tell you bluntly if and how I can help — or that I can't.","call.li3":"No obligation. Nothing to prepare beyond a short description of the issue.","cta.book":"Book a free call","contact.linkedin":"Kevin Doesburg on LinkedIn"
+    "price.vat":"excl. VAT","call.h3":"What happens on the call","call.li1":"One hour, free. You talk through your problem.","call.li2":"I tell you bluntly if and how I can help — or that I can't.","call.li3":"No obligation. Nothing to prepare beyond a short description of the issue.","cta.book":"Book a free call","contact.linkedin":"Kevin Doesburg on LinkedIn","per.month":" / month","pc.badge":"Most popular","tier.a":"Small job · €595","tier.b":"Build · €1,095","pa.title":"Small Job","pa.desc":"One focused job: audit, analysis, setup or a simple tool.","pa.li1":"Operations audit, staff cost analysis, social media setup, scheduling tool, AI scheduling tools","pa.li2":"Fixed price, agreed up front","pa.li3":"Direct communication with Kevin","pa.li4":"Delivered on a clear timeline","pa.cta":"Start a small job","pa.pay":"Paid by invoice after the scope is agreed.","pb.title":"Build","pb.desc":"A bigger piece of work, built and handed over working.","pb.li1":"Website, app/tool, business plan, P&L reporting, cash-flow forecasting, marketing automation, storefront integration","pb.li2":"Fixed price, agreed up front","pb.li3":"Direct communication with Kevin","pb.li4":"Delivered on a clear timeline","pb.cta":"Start a build","pb.pay":"Paid by invoice after the scope is agreed.","pc.title":"Monthly Support","pc.desc":"Ongoing help with your business, with a clear cap.","pc.li1":"Up to 2 working days per month","pc.li2":"Monthly P&L reporting and advice","pc.li3":"Any services from the list, within the 2 days","pc.li4":"Minimum 3 months; extra days quoted first","pc.cta":"Book discovery call","pc.pay":"Invoiced monthly.","offer1.h":"First project: 50% off","offer1.p":"New clients get 50% off their first project. One project per client.","offer2.h":"Loyalty: 10% off","offer2.p":"After 6 months of continuous Monthly Support, you pay 10% less than the standard monthly price."
   },
   nl: {
     "nav.about":"Over ons","nav.services":"Diensten","nav.pricing":"Prijzen","nav.login":"Klant login","nav.cta":"Gratis gesprek boeken",
@@ -678,7 +701,7 @@ const translations = {
     "about.li5":"Gratis kennismakingsgesprek van 1 uur, geheel vrijblijvend",
     "work.tag":"Klantwerk","work.h2":"Bedrijven waar we voor bouwen.","work.current":"In uitvoering","work.finished":"Opgeleverd",
     "services.tag":"Wat we bouwen","services.h2":"Eén klus. Eén vaste prijs.",
-    "services.p":"Kies precies wat je bedrijf nodig heeft — elk onderdeel hieronder is €375, los te bestellen, geen bundel verplicht.",
+    "services.p":"Elk onderdeel heeft een vaste prijs, vooraf afgesproken. Kleine klussen €595, grotere bouwprojecten €1.095 (excl. btw). Geen bundel verplicht.",
     "services.notlisted":"Staat jouw wens er niet bij? Kans is groot dat ik het toch kan bouwen —",
     "services.notlisted.cta":"neem contact op, dan bespreken we het.",
     "service1.title":"Businessplan","service1.desc":"Een plan dat echt gebruikt wordt, niet in een la verdwijnt.",
@@ -694,7 +717,7 @@ const translations = {
     "service11.title":"Webshop integratie","service11.desc":"Online verkopen met betalingen die gewoon werken.",
     "service12.title":"AI-planningstools","service12.desc":"Stille automatisering die elke week uren bespaart.",
     "pricing.tag":"Prijzen","pricing.h2":"Geen verborgen kosten. Geen verrassingen.",
-    "pricing.p":"Kies één losse dienst, of ga all-in met het 3-maandenpakket. Voeg alleen onderhoud toe als je dat wilt.",
+    "pricing.p":"Een vaste prijs per klus, of maandelijkse ondersteuning met een duidelijke grens. Alle prijzen excl. btw. Onderhoud alleen als je dat wilt.",
     "price1.title":"Losse dienst","price1.desc":"Eén klus, goed gedaan, van begin tot eind.",
     "price1.li1":"Elke dienst uit de lijst hierboven","price1.li2":"Vaste prijs, vooraf afgesproken",
     "price1.li3":"Direct contact met Kevin","price1.li4":"Geleverd binnen een duidelijke planning","price1.cta":"Start een project",
@@ -724,7 +747,7 @@ const translations = {
     "contact.p":"Stuur een e-mail. Kevin leest en beantwoordt elk bericht zelf, meestal binnen één werkdag.",
     "footer.privacy":"Privacybeleid",
     "footer.terms":"Voorwaarden",
-    "price.vat":"incl. btw","call.h3":"Wat gebeurt er in het gesprek","call.li1":"Eén uur, gratis. Jij vertelt wat het probleem is.","call.li2":"Ik zeg je eerlijk of en hoe ik kan helpen — of dat ik het niet kan.","call.li3":"Geen verplichtingen. Je hoeft niets voor te bereiden behalve een korte omschrijving van het probleem.","cta.book":"Boek een gratis gesprek","contact.linkedin":"Kevin Doesburg op LinkedIn"
+    "price.vat":"excl. btw","call.h3":"Wat gebeurt er in het gesprek","call.li1":"Eén uur, gratis. Jij vertelt wat het probleem is.","call.li2":"Ik zeg je eerlijk of en hoe ik kan helpen — of dat ik het niet kan.","call.li3":"Geen verplichtingen. Je hoeft niets voor te bereiden behalve een korte omschrijving van het probleem.","cta.book":"Boek een gratis gesprek","contact.linkedin":"Kevin Doesburg op LinkedIn","per.month":" / maand","pc.badge":"Meest gekozen","tier.a":"Kleine klus · €595","tier.b":"Bouwproject · €1.095","pa.title":"Kleine klus","pa.desc":"Eén gerichte klus: audit, analyse, inrichting of een eenvoudige tool.","pa.li1":"Operationele audit, personeelskostenanalyse, social media-inrichting, planningstool, AI-planningstools","pa.li2":"Vaste prijs, vooraf afgesproken","pa.li3":"Direct contact met Kevin","pa.li4":"Geleverd binnen een duidelijke planning","pa.cta":"Start een kleine klus","pa.pay":"Betaling per factuur zodra de opdracht is afgesproken.","pb.title":"Bouwproject","pb.desc":"Een groter stuk werk, gebouwd en werkend opgeleverd.","pb.li1":"Website, app/tool, ondernemingsplan, P&L-rapportage, cashflowprognose, marketingautomatisering, webshopkoppeling","pb.li2":"Vaste prijs, vooraf afgesproken","pb.li3":"Direct contact met Kevin","pb.li4":"Geleverd binnen een duidelijke planning","pb.cta":"Start een bouwproject","pb.pay":"Betaling per factuur zodra de opdracht is afgesproken.","pc.title":"Maandelijkse ondersteuning","pc.desc":"Doorlopende hulp voor je bedrijf, met een duidelijke grens.","pc.li1":"Tot 2 werkdagen per maand","pc.li2":"Maandelijkse P&L-rapportage en advies","pc.li3":"Alle diensten uit de lijst, binnen de 2 dagen","pc.li4":"Minimaal 3 maanden; extra dagen eerst geoffreerd","pc.cta":"Boek kennismakingsgesprek","pc.pay":"Maandelijks gefactureerd.","offer1.h":"Eerste project: 50% korting","offer1.p":"Nieuwe klanten krijgen 50% korting op hun eerste project. Eén project per klant.","offer2.h":"Loyaliteit: 10% korting","offer2.p":"Na 6 maanden onafgebroken maandelijkse ondersteuning betaal je 10% minder dan de standaard maandprijs."
   },
   sv: {
     "nav.about":"Om oss","nav.services":"Tjänster","nav.pricing":"Priser","nav.login":"Kundinloggning","nav.cta":"Boka gratis samtal",
@@ -747,7 +770,7 @@ const translations = {
     "about.li5":"Kostnadsfritt 1-timmes samtal innan du bestämmer dig för något",
     "work.tag":"Kundarbete","work.h2":"Företag vi bygger åt.","work.current":"Pågående","work.finished":"Levererat",
     "services.tag":"Vad vi bygger","services.h2":"Ett jobb. Ett fast pris.",
-    "services.p":"Välj exakt vad ditt företag behöver — varje tjänst nedan kostar €375, fristående, ingen paketering krävs.",
+    "services.p":"Varje tjänst har ett fast pris, avtalat i förväg. Mindre jobb kostar €595, större byggen €1 095 (exkl. moms). Ingen paketering krävs.",
     "services.notlisted":"Ser du inte det du behöver? Chansen är stor att jag ändå kan bygga det —",
     "services.notlisted.cta":"hör av dig så pratar vi.",
     "service1.title":"Affärsplan","service1.desc":"En plan byggd för att faktiskt användas, inte arkiveras.",
@@ -763,7 +786,7 @@ const translations = {
     "service11.title":"Butiksintegration","service11.desc":"Sälj online med betalningar som bara fungerar.",
     "service12.title":"AI-schemaverktyg","service12.desc":"Tyst automation som sparar timmar varje vecka.",
     "pricing.tag":"Priser","pricing.h2":"Inga dolda avgifter. Inga överraskningar.",
-    "pricing.p":"Välj en enskild tjänst, eller kör allt med 3-månaderspaketet. Lägg bara till underhåll om du vill.",
+    "pricing.p":"Fast pris per jobb, eller månadsstöd med ett tydligt tak. Alla priser exkl. moms. Lägg bara till underhåll om du vill.",
     "price1.title":"Enskild tjänst","price1.desc":"Ett jobb, gjort ordentligt, från början till slut.",
     "price1.li1":"Vilken tjänst som helst från listan ovan","price1.li2":"Fast pris, avtalat i förväg",
     "price1.li3":"Direktkontakt med Kevin","price1.li4":"Levereras enligt en tydlig tidsplan","price1.cta":"Starta ett projekt",
@@ -793,7 +816,7 @@ const translations = {
     "contact.p":"Skicka ett mejl. Kevin läser och svarar på varje meddelande själv, oftast inom en arbetsdag.",
     "footer.privacy":"Integritetspolicy",
     "footer.terms":"Villkor",
-    "price.vat":"inkl. moms","call.h3":"Vad händer under samtalet","call.li1":"En timme, gratis. Du berättar om ditt problem.","call.li2":"Jag säger rakt ut om och hur jag kan hjälpa — eller att jag inte kan.","call.li3":"Inga förpliktelser. Inget att förbereda utöver en kort beskrivning av problemet.","cta.book":"Boka ett gratis samtal","contact.linkedin":"Kevin Doesburg på LinkedIn"
+    "price.vat":"exkl. moms","call.h3":"Vad händer under samtalet","call.li1":"En timme, gratis. Du berättar om ditt problem.","call.li2":"Jag säger rakt ut om och hur jag kan hjälpa — eller att jag inte kan.","call.li3":"Inga förpliktelser. Inget att förbereda utöver en kort beskrivning av problemet.","cta.book":"Boka ett gratis samtal","contact.linkedin":"Kevin Doesburg på LinkedIn","per.month":" / månad","pc.badge":"Mest populär","tier.a":"Mindre jobb · €595","tier.b":"Bygge · €1 095","pa.title":"Mindre jobb","pa.desc":"Ett avgränsat jobb: genomlysning, analys, uppsättning eller ett enkelt verktyg.","pa.li1":"Verksamhetsgenomlysning, personalkostnadsanalys, uppsättning av sociala medier, schemaverktyg, AI-schemaverktyg","pa.li2":"Fast pris, avtalat i förväg","pa.li3":"Direktkontakt med Kevin","pa.li4":"Levereras enligt en tydlig tidsplan","pa.cta":"Starta ett mindre jobb","pa.pay":"Betalas mot faktura när omfattningen är avtalad.","pb.title":"Bygge","pb.desc":"Ett större arbete, byggt och överlämnat i fungerande skick.","pb.li1":"Webbplats, app/verktyg, affärsplan, resultatrapportering, likviditetsprognos, marknadsautomation, e-handelsintegration","pb.li2":"Fast pris, avtalat i förväg","pb.li3":"Direktkontakt med Kevin","pb.li4":"Levereras enligt en tydlig tidsplan","pb.cta":"Starta ett bygge","pb.pay":"Betalas mot faktura när omfattningen är avtalad.","pc.title":"Månadsstöd","pc.desc":"Löpande hjälp med ditt företag, med ett tydligt tak.","pc.li1":"Upp till 2 arbetsdagar per månad","pc.li2":"Månatlig resultatrapportering och rådgivning","pc.li3":"Valfria tjänster från listan, inom de 2 dagarna","pc.li4":"Minst 3 månader; extra dagar offereras först","pc.cta":"Boka samtal","pc.pay":"Faktureras månadsvis.","offer1.h":"Första projektet: 50% rabatt","offer1.p":"Nya kunder får 50% rabatt på sitt första projekt. Ett projekt per kund.","offer2.h":"Lojalitet: 10% rabatt","offer2.p":"Efter 6 månader i följd med Månadsstöd betalar du 10% mindre än det ordinarie månadspriset."
   },
   de: {
     "nav.about":"Über uns","nav.services":"Leistungen","nav.pricing":"Preise","nav.login":"Kunden-Login","nav.cta":"Kostenloses Gespräch buchen",
@@ -816,7 +839,7 @@ const translations = {
     "about.li5":"Kostenloses 1-Stunden-Erstgespräch, bevor du dich festlegst",
     "work.tag":"Kundenprojekte","work.h2":"Unternehmen, für die wir bauen.","work.current":"In Arbeit","work.finished":"Abgeschlossen",
     "services.tag":"Was wir bauen","services.h2":"Ein Job. Ein Festpreis.",
-    "services.p":"Wähle genau das, was dein Unternehmen braucht — jede Leistung unten kostet €375, einzeln buchbar, kein Bundle nötig.",
+    "services.p":"Jede Leistung hat einen Festpreis, vorab vereinbart. Kleine Aufträge €595, größere Projekte €1.095 (zzgl. MwSt.). Kein Bundle nötig.",
     "services.notlisted":"Nicht dabei, was du brauchst? Wahrscheinlich kann ich es trotzdem bauen —",
     "services.notlisted.cta":"melde dich, dann besprechen wir es.",
     "service1.title":"Geschäftsplan","service1.desc":"Ein Plan, der wirklich genutzt wird, nicht abgeheftet wird.",
@@ -832,7 +855,7 @@ const translations = {
     "service11.title":"Shop-Integration","service11.desc":"Online verkaufen mit Zahlungen, die einfach funktionieren.",
     "service12.title":"KI-Planungstools","service12.desc":"Stille Automatisierung, die jede Woche Stunden spart.",
     "pricing.tag":"Preise","pricing.h2":"Keine versteckten Kosten. Keine Überraschungen.",
-    "pricing.p":"Wähle eine einzelne Leistung oder geh mit dem 3-Monats-Paket all-in. Wartung nur, wenn du sie willst.",
+    "pricing.p":"Ein Festpreis pro Auftrag oder monatliche Unterstützung mit klarer Obergrenze. Alle Preise zzgl. MwSt. Wartung nur, wenn du sie willst.",
     "price1.title":"Einzelleistung","price1.desc":"Ein Job, sauber erledigt, von Anfang bis Ende.",
     "price1.li1":"Jede Leistung aus der Liste oben","price1.li2":"Festpreis, vorab vereinbart",
     "price1.li3":"Direkter Kontakt mit Kevin","price1.li4":"Lieferung nach klarem Zeitplan","price1.cta":"Projekt starten",
@@ -862,7 +885,7 @@ const translations = {
     "contact.p":"Schick eine E-Mail. Kevin liest und beantwortet jede Nachricht selbst, meist innerhalb eines Werktags.",
     "footer.privacy":"Datenschutz",
     "footer.terms":"AGB",
-    "price.vat":"inkl. MwSt.","call.h3":"Was im Gespräch passiert","call.li1":"Eine Stunde, kostenlos. Du schilderst dein Problem.","call.li2":"Ich sage dir offen, ob und wie ich helfen kann — oder dass ich es nicht kann.","call.li3":"Keine Verpflichtung. Nichts vorzubereiten außer einer kurzen Beschreibung des Problems.","cta.book":"Kostenloses Gespräch buchen","contact.linkedin":"Kevin Doesburg auf LinkedIn"
+    "price.vat":"zzgl. MwSt.","call.h3":"Was im Gespräch passiert","call.li1":"Eine Stunde, kostenlos. Du schilderst dein Problem.","call.li2":"Ich sage dir offen, ob und wie ich helfen kann — oder dass ich es nicht kann.","call.li3":"Keine Verpflichtung. Nichts vorzubereiten außer einer kurzen Beschreibung des Problems.","cta.book":"Kostenloses Gespräch buchen","contact.linkedin":"Kevin Doesburg auf LinkedIn","per.month":" / Monat","pc.badge":"Am beliebtesten","tier.a":"Kleiner Auftrag · €595","tier.b":"Projekt · €1.095","pa.title":"Kleiner Auftrag","pa.desc":"Ein klar abgegrenzter Auftrag: Audit, Analyse, Einrichtung oder ein einfaches Tool.","pa.li1":"Betriebsaudit, Personalkostenanalyse, Social-Media-Einrichtung, Planungstool, KI-Planungstools","pa.li2":"Festpreis, vorab vereinbart","pa.li3":"Direkter Kontakt mit Kevin","pa.li4":"Lieferung nach klarem Zeitplan","pa.cta":"Kleinen Auftrag starten","pa.pay":"Zahlung per Rechnung nach vereinbartem Umfang.","pb.title":"Projekt","pb.desc":"Ein größeres Stück Arbeit, gebaut und funktionsfähig übergeben.","pb.li1":"Website, App/Tool, Businessplan, GuV-Reporting, Liquiditätsprognose, Marketing-Automatisierung, Shop-Integration","pb.li2":"Festpreis, vorab vereinbart","pb.li3":"Direkter Kontakt mit Kevin","pb.li4":"Lieferung nach klarem Zeitplan","pb.cta":"Projekt starten","pb.pay":"Zahlung per Rechnung nach vereinbartem Umfang.","pc.title":"Monatliche Unterstützung","pc.desc":"Laufende Hilfe für dein Unternehmen, mit klarer Obergrenze.","pc.li1":"Bis zu 2 Arbeitstage pro Monat","pc.li2":"Monatliches GuV-Reporting und Beratung","pc.li3":"Beliebige Leistungen aus der Liste, innerhalb der 2 Tage","pc.li4":"Mindestens 3 Monate; zusätzliche Tage vorher angeboten","pc.cta":"Erstgespräch buchen","pc.pay":"Monatliche Rechnung.","offer1.h":"Erstes Projekt: 50% Rabatt","offer1.p":"Neukunden erhalten 50% Rabatt auf ihr erstes Projekt. Ein Projekt pro Kunde.","offer2.h":"Treue: 10% Rabatt","offer2.p":"Nach 6 Monaten ununterbrochener monatlicher Unterstützung zahlst du 10% weniger als den regulären Monatspreis."
   }
 };
 
