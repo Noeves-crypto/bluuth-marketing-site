@@ -180,6 +180,9 @@
     display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px;
   }
   .service-card h3{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--ink);}
+  .case-results{margin:12px 0 0 18px;font-size:14px;color:var(--ink);}
+  .case-results li{margin-bottom:4px;}
+  .case-link{color:var(--green-deep);font-weight:700;text-decoration:underline;}
   .service-card p{font-size:14px;color:var(--grey);}
 
   /* PRICING */
@@ -324,6 +327,7 @@
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="about.html" data-i18n="nav.aboutme">About me</a>
         <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#cases" data-i18n="nav.cases">Built</a>
         <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
       </div>
       <div class="nav-right">
@@ -472,6 +476,21 @@
   </div>
 </section>
 
+<section id="cases">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag" data-i18n="cases.tag">What I've built</div>
+      <h2 data-i18n="cases.h2">Real tools. Real results.</h2>
+      <p data-i18n="cases.p">Built for my own operations first. Anonymised, but real.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card case-card"><div class="icon">01</div><h3 data-i18n="cases.c1t">Weekly planning briefing</h3><div class="tier-tag" data-i18n="cases.c1s">Restaurant group · 10 locations</div><p data-i18n="cases.c1d">Every Monday at 08:00 an email lands automatically: weather for 7 cities, local events, mall events and planned roadworks — plus advice on where to add, change or cut staff in the current schedule.</p><ul class="case-results"><li data-i18n="cases.c1r1">~2 hours of manual work saved every week</li><li data-i18n="cases.c1r2">Managers get the right info to plan</li><li data-i18n="cases.c1r3">Key part of +4% like-for-like growth across 8 restaurants in 6 months</li></ul></div>
+      <div class="service-card case-card"><div class="icon">02</div><h3 data-i18n="cases.c2t">Expansion & location search</h3><div class="tier-tag" data-i18n="cases.c2s">Market research tool</div><p data-i18n="cases.c2d">Finds promising locations for new openings and pulls together contact numbers and emails, so the next step is one call away.</p></div>
+      <div class="service-card case-card"><div class="icon">03</div><h3 data-i18n="cases.c3t">Bluuth itself</h3><div class="tier-tag" data-i18n="cases.c3s">Website + client portal</div><p data-i18n="cases.c3d">This website and the Bluuth customer portal — booking and client area. Built with the same AI-first approach you get as a client.</p><p><a href="https://portal.bluuth.com" class="case-link" data-i18n="cases.c3l">See the portal →</a></p></div>
+    </div>
+  </div>
+</section>
+
 <section id="pricing" class="pricing-section">
   <div class="wrap">
     <div class="section-head">
@@ -598,6 +617,8 @@
 <script>
 const translations = {
   en: {
+    "nav.cases":"Built",
+    "cases.tag":"What I've built","cases.h2":"Real tools. Real results.","cases.p":"Built for my own operations first. Anonymised, but real.","cases.c1t":"Weekly planning briefing","cases.c1s":"Restaurant group · 10 locations","cases.c1d":"Every Monday at 08:00 an email lands automatically: weather for 7 cities, local events, mall events and planned roadworks — plus advice on where to add, change or cut staff in the current schedule.","cases.c1r1":"~2 hours of manual work saved every week","cases.c1r2":"Managers get the right info to plan","cases.c1r3":"Key part of +4% like-for-like growth across 8 restaurants in 6 months","cases.c2t":"Expansion & location search","cases.c2s":"Market research tool","cases.c2d":"Finds promising locations for new openings and pulls together contact numbers and emails, so the next step is one call away.","cases.c3t":"Bluuth itself","cases.c3s":"Website + client portal","cases.c3d":"This website and the Bluuth customer portal — booking and client area. Built with the same AI-first approach you get as a client.","cases.c3l":"See the portal →",
     "nav.about":"About","nav.services":"Services","nav.pricing":"Pricing","nav.login":"Client login","nav.cta":"Book free call",
     "hero.eyebrow":"Operations · IT · Consulting",
     "hero.title":"Blunt advice. <em>Honest</em> work. Real results.",
@@ -667,6 +688,8 @@ const translations = {
     "price.vat":"excl. VAT","call.h3":"What happens on the call","call.li1":"One hour, free. You talk through your problem.","call.li2":"I tell you bluntly if and how I can help — or that I can't.","call.li3":"No obligation. Nothing to prepare beyond a short description of the issue.","cta.book":"Book a free call","contact.linkedin":"Kevin Doesburg on LinkedIn","per.month":" / month","pc.badge":"Most popular","pa.title":"Single Build","pa.desc":"One build from the list, done properly, start to finish.","pa.li1":"Any one service from the list above","pa.li2":"Fixed price, agreed up front","pa.li3":"Direct communication with Kevin","pa.li4":"Delivered on a clear timeline","pa.cta":"Start a build","pa.pay":"Paid by invoice after the scope is agreed.","pc.title":"Total Support","pc.desc":"Every build you need during the support period, plus maintenance of all of them.","pc.li1":"All builds needed during the support period included","pc.li2":"Maintenance of all builds included","pc.li3":"Monthly P&L reporting and advice","pc.li4":"Fair use: up to 2 working days/month, min. 3 months, extra work quoted first","pc.cta":"Book discovery call","pc.pay":"Invoiced monthly.","offer1.h":"First project: 50% off","offer1.p":"New clients get 50% off one single build (€297.50 instead of €595). One project per client.","offer2.h":"Loyalty: 10% off","offer2.p":"After 6 continuous months of Total Support, you pay 10% less: €985.50/month instead of €1,095.","tier.label":"Single build","maintenance.per2":"/ month<br>per build"
   },
   nl: {
+    "nav.cases":"Gebouwd",
+    "cases.tag":"Wat ik heb gebouwd","cases.h2":"Echte tools. Echte resultaten.","cases.p":"Eerst gebouwd voor mijn eigen operatie. Geanonimiseerd, maar echt.","cases.c1t":"Wekelijkse planningsbriefing","cases.c1s":"Restaurantgroep · 10 locaties","cases.c1d":"Elke maandag om 08:00 komt automatisch een e-mail binnen: het weer voor 7 steden, lokale evenementen, winkelcentrum-evenementen en geplande wegwerkzaamheden — plus advies waar je personeel toevoegt, verschuift of afschaalt in het huidige rooster.","cases.c1r1":"~2 uur handwerk bespaard per week","cases.c1r2":"Managers krijgen de juiste info om te plannen","cases.c1r3":"Belangrijk onderdeel van +4% like-for-like groei over 8 restaurants in 6 maanden","cases.c2t":"Expansie- & locatiezoeker","cases.c2s":"Marktonderzoekstool","cases.c2d":"Vindt kansrijke locaties voor nieuwe vestigingen en verzamelt telefoonnummers en e-mails, zodat de volgende stap één telefoontje is.","cases.c3t":"Bluuth zelf","cases.c3s":"Website + klantportaal","cases.c3d":"Deze website en het Bluuth-klantportaal — boeken en klantomgeving. Gebouwd met dezelfde AI-first aanpak die je als klant krijgt.","cases.c3l":"Bekijk het portaal →",
     "nav.about":"Over ons","nav.services":"Diensten","nav.pricing":"Prijzen","nav.login":"Klant login","nav.cta":"Gratis gesprek boeken",
     "hero.eyebrow":"Operaties · IT · Consulting",
     "hero.title":"Botte adviezen. <em>Eerlijk</em> werk. Echte resultaten.",
@@ -736,6 +759,8 @@ const translations = {
     "price.vat":"excl. btw","call.h3":"Wat gebeurt er in het gesprek","call.li1":"Eén uur, gratis. Jij vertelt wat het probleem is.","call.li2":"Ik zeg je eerlijk of en hoe ik kan helpen — of dat ik het niet kan.","call.li3":"Geen verplichtingen. Je hoeft niets voor te bereiden behalve een korte omschrijving van het probleem.","cta.book":"Boek een gratis gesprek","contact.linkedin":"Kevin Doesburg op LinkedIn","per.month":" / maand","pc.badge":"Meest gekozen","pa.title":"Losse bouwopdracht","pa.desc":"Eén onderdeel uit de lijst, goed gedaan, van begin tot eind.","pa.li1":"Elke dienst uit de lijst hierboven","pa.li2":"Vaste prijs, vooraf afgesproken","pa.li3":"Direct contact met Kevin","pa.li4":"Geleverd binnen een duidelijke planning","pa.cta":"Start een bouwopdracht","pa.pay":"Betaling per factuur zodra de opdracht is afgesproken.","pc.title":"Totale ondersteuning","pc.desc":"Elke bouwopdracht die je tijdens de periode nodig hebt, plus onderhoud van alles.","pc.li1":"Alle bouwopdrachten tijdens de periode inbegrepen","pc.li2":"Onderhoud van alle bouwopdrachten inbegrepen","pc.li3":"Maandelijkse P&L-rapportage en advies","pc.li4":"Redelijk gebruik: tot 2 werkdagen/maand, min. 3 maanden, extra werk eerst geoffreerd","pc.cta":"Boek kennismakingsgesprek","pc.pay":"Maandelijks gefactureerd.","offer1.h":"Eerste project: 50% korting","offer1.p":"Nieuwe klanten krijgen 50% korting op één losse bouwopdracht (€297,50 in plaats van €595). Eén project per klant.","offer2.h":"Loyaliteit: 10% korting","offer2.p":"Na 6 maanden onafgebroken Totale ondersteuning betaal je 10% minder: €985,50/maand in plaats van €1.095.","tier.label":"Losse bouwopdracht","maintenance.per2":"/ maand<br>per bouwopdracht"
   },
   sv: {
+    "nav.cases":"Byggt",
+    "cases.tag":"Det jag har byggt","cases.h2":"Riktiga verktyg. Riktiga resultat.","cases.p":"Byggt för min egen verksamhet först. Anonymiserat, men på riktigt.","cases.c1t":"Veckovis planeringsbrief","cases.c1s":"Restauranggrupp · 10 enheter","cases.c1d":"Varje måndag kl. 08:00 kommer ett mejl automatiskt: väder för 7 städer, lokala evenemang, galleriaevenemang och planerade vägarbeten — plus råd om var personal ska läggas till, flyttas eller dras ner i schemat.","cases.c1r1":"~2 timmars manuellt arbete sparat varje vecka","cases.c1r2":"Cheferna får rätt info för att planera","cases.c1r3":"En nyckeldel i +4 % jämförbar tillväxt över 8 restauranger på 6 månader","cases.c2t":"Expansions- och lägessök","cases.c2s":"Verktyg för marknadsanalys","cases.c2d":"Hittar lovande lägen för nya öppningar och samlar kontaktnummer och mejl, så nästa steg bara är ett samtal bort.","cases.c3t":"Bluuth självt","cases.c3s":"Webbplats + kundportal","cases.c3d":"Den här webbplatsen och Bluuths kundportal — bokning och kundområde. Byggt med samma AI-first-metod som du får som kund.","cases.c3l":"Se portalen →",
     "nav.about":"Om oss","nav.services":"Tjänster","nav.pricing":"Priser","nav.login":"Kundinloggning","nav.cta":"Boka gratis samtal",
     "hero.eyebrow":"Verksamhet · IT · Konsulting",
     "hero.title":"Rakt på sak. <em>Ärligt</em> arbete. Riktiga resultat.",
@@ -805,6 +830,8 @@ const translations = {
     "price.vat":"exkl. moms","call.h3":"Vad händer under samtalet","call.li1":"En timme, gratis. Du berättar om ditt problem.","call.li2":"Jag säger rakt ut om och hur jag kan hjälpa — eller att jag inte kan.","call.li3":"Inga förpliktelser. Inget att förbereda utöver en kort beskrivning av problemet.","cta.book":"Boka ett gratis samtal","contact.linkedin":"Kevin Doesburg på LinkedIn","per.month":" / månad","pc.badge":"Mest populär","pa.title":"Enskilt bygge","pa.desc":"Ett bygge från listan, gjort ordentligt, från början till slut.","pa.li1":"Vilken tjänst som helst från listan ovan","pa.li2":"Fast pris, avtalat i förväg","pa.li3":"Direktkontakt med Kevin","pa.li4":"Levereras enligt en tydlig tidsplan","pa.cta":"Starta ett bygge","pa.pay":"Betalas mot faktura när omfattningen är avtalad.","pc.title":"Totalsupport","pc.desc":"Alla byggen du behöver under supportperioden, plus underhåll av samtliga.","pc.li1":"Alla byggen under supportperioden ingår","pc.li2":"Underhåll av alla byggen ingår","pc.li3":"Månatlig resultatrapportering och rådgivning","pc.li4":"Skälig användning: upp till 2 arbetsdagar/månad, minst 3 månader, extra arbete offereras först","pc.cta":"Boka samtal","pc.pay":"Faktureras månadsvis.","offer1.h":"Första projektet: 50% rabatt","offer1.p":"Nya kunder får 50% rabatt på ett enskilt bygge (€297,50 i stället för €595). Ett projekt per kund.","offer2.h":"Lojalitet: 10% rabatt","offer2.p":"Efter 6 månader i följd med Totalsupport betalar du 10% mindre: €985,50/månad i stället för €1 095.","tier.label":"Enskilt bygge","maintenance.per2":"/ månad<br>per bygge"
   },
   de: {
+    "nav.cases":"Gebaut",
+    "cases.tag":"Was ich gebaut habe","cases.h2":"Echte Tools. Echte Ergebnisse.","cases.p":"Zuerst für meinen eigenen Betrieb gebaut. Anonymisiert, aber echt.","cases.c1t":"Wöchentliches Planungs-Briefing","cases.c1s":"Restaurantgruppe · 10 Standorte","cases.c1d":"Jeden Montag um 08:00 kommt automatisch eine E-Mail: Wetter für 7 Städte, lokale Events, Einkaufszentrum-Events und geplante Baustellen — plus Hinweise, wo im aktuellen Dienstplan Personal ergänzt, verschoben oder reduziert werden sollte.","cases.c1r1":"~2 Stunden manuelle Arbeit pro Woche gespart","cases.c1r2":"Manager bekommen die richtigen Infos zum Planen","cases.c1r3":"Wichtiger Teil von +4 % Like-for-like-Wachstum in 8 Restaurants in 6 Monaten","cases.c2t":"Expansions- & Standortsuche","cases.c2s":"Marktanalyse-Tool","cases.c2d":"Findet vielversprechende Standorte für neue Eröffnungen und sammelt Telefonnummern und E-Mails, damit der nächste Schritt nur ein Anruf ist.","cases.c3t":"Bluuth selbst","cases.c3s":"Website + Kundenportal","cases.c3d":"Diese Website und das Bluuth-Kundenportal — Buchung und Kundenbereich. Gebaut mit demselben AI-first-Ansatz, den du als Kunde bekommst.","cases.c3l":"Zum Portal →",
     "nav.about":"Über uns","nav.services":"Leistungen","nav.pricing":"Preise","nav.login":"Kunden-Login","nav.cta":"Kostenloses Gespräch buchen",
     "hero.eyebrow":"Betrieb · IT · Beratung",
     "hero.title":"Klare Ansagen. <em>Ehrliche</em> Arbeit. Echte Ergebnisse.",
